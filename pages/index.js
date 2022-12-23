@@ -31,6 +31,7 @@ export default function Home({schedule, bands}) {
         <meta name="keywords" content="festival, app, schedule, music, exam, reactjs, nextjs"></meta>
       </Head>       
       <main className='main'>
+        <h1>here we go again</h1>
         <Filtering setSearch={setSearch} setGenre={setGenre}/>
         <Days schedule={schedule} setFilter={setFilter}/> 
         <Midgard schedule={schedule} filter={filter} search={search} bands={bands} genre={genre}/>
