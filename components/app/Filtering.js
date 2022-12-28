@@ -1,6 +1,6 @@
 import Image from "next/image"//this module automaticaly automise the img with Squoosh
-import bi_search from "../public/media/bi_search.png" // it is necesary import the images as so
-import bi_filter_right from "../public/media/bi_filter_right.png" // it is necesary import the images as so
+import bi_search from "../../public/media/bi_search.png" // it is necesary import the images as so
+import bi_filter_right from "../../public/media/bi_filter_right.png" // it is necesary import the images as so
 
 export default function Filtering({setSearch, setGenre}) {
 

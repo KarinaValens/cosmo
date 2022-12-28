@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import place_holder from "../public/media/place_holder.png" 
 import { useState } from 'react';
 import Image from 'next/image';
 

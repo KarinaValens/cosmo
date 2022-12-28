@@ -9,9 +9,6 @@ export default function Midgard({schedule , filter, search, genre, bands}) {
   //filtering by genre I am looping into the bands with find this is a feature in development
   const gen = bands.find(band=>band.genre === genre)
 
-
- console.log(gen)  
-
   return (
     <>    
       <h3 className="accent2">{stageName[0]}</h3>
