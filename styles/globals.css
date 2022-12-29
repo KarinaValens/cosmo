@@ -23,7 +23,7 @@
 
 * {
   box-sizing: border-box;
-  border: dotted 1px hotpink;
+  /* border: dotted 1px hotpink; */
 }
 
 html,
@@ -449,6 +449,12 @@ form {
 
 .basket-container a {
   width: -webkit-fill-available;
+}
+
+.cartItems {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
 }
 
 /* small tablet styles */

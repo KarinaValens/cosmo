@@ -4,7 +4,7 @@ import Basket from "./booking/Basket"
 
 //the images are place in the public folder inside media
 
-export default function Header() {
+export default function Header({cart}) {
     //it is not necesary to write an unit in the the width and the heigh properties 
   return (
     <header>
@@ -12,7 +12,7 @@ export default function Header() {
         <a  href={"/"} >
           <Image  /* className="logo" */ src={dark_theme_logo} alt={""} width={"50"} height={"45"} priority sizes="(max-width: 700px) 100vw, 700px" />
         </a>
-        <Basket/>
+        <Basket cart={cart}/>
       </div>
         <h1 className="title accent1">COSMO</h1>
         <div className="bands-card headerDays">
