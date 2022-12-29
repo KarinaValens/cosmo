@@ -21,13 +21,7 @@ export default function Tickets({handleChange}) {
         placeholder="1"/>
     <p>1299,-</p>
     </label>  
-
-    <label>Green Camping: 
-        <input onChange={handleChange} 
-        name="greenCamping" 
-        value="Green Camping"  
-        type="checkbox"/>
-    </label>
+    
 </div>
   )
 }

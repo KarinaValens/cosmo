@@ -3,7 +3,7 @@ import { useState} from "react"
 
 
 
-export default function Accommodation({handleChange}) {
+export default function Accommodation({handleChange , checkbox}) {
 
   return (
     <div>
@@ -42,7 +42,16 @@ export default function Accommodation({handleChange}) {
             name="accommodation" 
             value="Alfheim" 
             type="radio"/>
-        </label>        
+        </label>  
+
+        <label>Green Camping: 
+        <input onChange={handleChange} 
+        name="greenCamping" 
+        value=" "  
+        type="checkbox"
+        ref={checkbox}
+        />
+      </label>      
         
     </div>
   )
