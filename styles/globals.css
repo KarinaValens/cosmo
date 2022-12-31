@@ -451,10 +451,12 @@ form {
   width: -webkit-fill-available;
 }
 
-.cartItems {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 2rem;
+.quantity {
+  color: var(--color-accent7);
+  font-weight: bold;
+  position: relative;
+  top: -15px;
+  left: -5px;
 }
 
 /* small tablet styles */

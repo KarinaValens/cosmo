@@ -6,7 +6,7 @@ import {useRouter} from "next/router";
 export default function Anchor({children, href, className}) {
  //the anchor tag receives the props className, children and href
    
-const router = useRouter
+const router = useRouter();
 //the hook useRouter is going to give us acces to router object
 
 function handleClick(e){

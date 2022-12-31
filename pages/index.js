@@ -24,37 +24,39 @@ const [tickets, setTickets]=useState({
     accommodation:""
 });
 
-const checkbox=useRef();
-
-
 const handleChange = (e) => {
+    /* this function handle all the necesary items to buy tickets at ones  using just one state setTickets*/
 const name = e.target.name
 const value = e.target.value
 setTickets((previous)=>{
     return{...previous, [name]: value}
 })
 }
+const checkbox=useRef();//to verify if the checkbox of the green camping in the accommodation component is checked
+
 
 /* -------- // Basket // -------- */
 const [cart, setCart]=useState([]);
 
 const addToCart = (e) =>{  
-    e.preventDefault();
-    cart.push(tickets)
+    e.preventDefault();// I need to erase this ones I figure out how to stop the page to reload when clicking the add to car button
+    cart.push(tickets)// this pushes the tickets objects storage in the state setTickets into the stage cart
     setCart(cart.concat())   
     }
 
+const [show, setShow]=useState();
 
   return (
     <>
-      <Header cart={cart} checkbox={checkbox}/>
-        <div className="container">
         <Head>
         <title>The Festival | Schedule</title>
           <meta name="description" content="This is my KEA thrid semester Frontend Elective exam" />
           <meta name="keywords" content="festival, app, schedule, music, exam, reactjs, nextjs"></meta>
         </Head> 
-    
+        <Header setShow={setShow} show={show} />
+        <div className="container">
+        {show ? <Basket cart={cart} checkbox={checkbox}/> : true}
+
     <form>
         <Tickets handleChange={handleChange} />
         <Accommodation handleChange={handleChange} checkbox={checkbox}/>

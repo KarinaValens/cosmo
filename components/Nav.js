@@ -6,9 +6,9 @@ export default function Nav() {
     <nav className="nav">
         <ul>
             <Anchor href={"/"}>Home</Anchor>
-            <Anchor href={"/bands"}>Bands</Anchor>
-            <Anchor href={"/stages"}>Stages</Anchor>
-            <Anchor href={"/acomodation"}>Acomodation</Anchor>
+            <Anchor href={"/schedule"}>Schedule</Anchor>
+            {/* <Anchor href={"/stages"}>Stages</Anchor>
+            <Anchor href={"/acomodation"}>Acomodation</Anchor> */}
         </ul>
     </nav>   
     

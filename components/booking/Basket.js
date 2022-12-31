@@ -1,4 +1,3 @@
-import { useRef } from "react";
 
 
 function Basket({cart, checkbox}) {
@@ -23,7 +22,7 @@ return (
             const tents2per=item.tents2per * item.tents2perPrice;
             const tents3per=item.tents3per * item.tents3perPrice;
             const greenCamping=parseInt(checkbox.current.checked ? item.greenPrice : 0);//the result of this ternary operator was an string so I use parseInt method to convert it to a number
-            const subtotal= regular + vip + tents2per + tents3per /* + greenCamping */;
+            const subtotal= regular + vip + tents2per + tents3per + greenCamping ;
             const bookingFee= 99;
             const total= subtotal + bookingFee;
 
