@@ -1,7 +1,11 @@
+import { useContext, useState } from "react";
+import { AppContext } from "../context/AppContext";
 
 
-function Basket({cart, checkbox}) {
- 
+
+function Basket() {
+    
+ const {cart, checkbox}=useContext(AppContext)
 
 return (
     <div>

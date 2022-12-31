@@ -1,5 +1,13 @@
+import { useContext, useState } from "react";
+import { AppContext } from "../context/AppContext";
 
-export default function Tickets({handleChange}) {
+
+
+export default function Tickets() {
+
+  const {handleChange}=useContext(AppContext)
+
+
   return (
     <div>        
     <label>Regular Ticket: 

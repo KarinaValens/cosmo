@@ -1,5 +1,11 @@
+import { useContext, useState } from "react";
+import { AppContext } from "../context/AppContext";
 
-function Tents({handleChange}) {
+function Tents() {
+
+  const {handleChange}=useContext(AppContext)
+
+
   return (
     <div>
         <label>Help setting 2 person tent: 

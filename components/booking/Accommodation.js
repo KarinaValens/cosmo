@@ -1,9 +1,13 @@
-import { useState} from "react"
+import { useContext, useState } from "react";
+import { AppContext } from "../context/AppContext";
 
 
 
 
-export default function Accommodation({handleChange , checkbox}) {
+export default function Accommodation() {
+
+  const {handleChange , checkbox}=useContext(AppContext)
+
 
   return (
     <div>
