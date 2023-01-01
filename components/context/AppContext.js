@@ -1,8 +1,11 @@
 import { useState, createContext, useRef} from "react";
 
-export const AppContext = createContext();
+export const AppContext = createContext();//creates the context to use in the components
+
+
 
 export function AppContextProvider(props){
+    //this function is the wrapper for the -aap.js page to pass all the props
 
 /* ------- // Booking // ------- */
 const [tickets, setTickets]=useState({
@@ -35,11 +38,9 @@ const addToCart = (e) =>{
     cart.push(tickets)// this pushes the tickets objects storage in the state setTickets into the stage cart
     setCart(cart.concat())   
     }
+/* ---- // tickets mapping // -------- */
 
 const [show, setShow]=useState(false);
-
-
-
 
 const value={tickets, setTickets, cart, setCart, handleChange, checkbox, addToCart, show, setShow}
 
@@ -49,3 +50,4 @@ const value={tickets, setTickets, cart, setCart, handleChange, checkbox, addToCa
         </AppContext.Provider>
     )
 }
+

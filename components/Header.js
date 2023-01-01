@@ -1,14 +1,17 @@
+
 import Image from "next/image"//this module automaticaly automise the img with Squoosh
 import dark_theme_logo from "../public/media/dark_theme_logo.png" // it is necesary import the images as so
 import Anchor from "./Anchor"
-import Basket from "./booking/Basket"
 import Cart from "./booking/Cart"
 import Nav from "./Nav"
+import Basket from "./booking/Basket";
+
 
 //the images are place in the public folder inside media
 
-export default function Header({show, setShow}) {
+export default function Header() {
     //it is not necesary to write an unit in the the width and the heigh properties 
+
   return (
     <header>
       <Nav/>
@@ -17,7 +20,7 @@ export default function Header({show, setShow}) {
           <Image  src={dark_theme_logo} alt={""} width={"50"} height={"45"} priority sizes="(max-width: 700px) 100vw, 700px" />
         </Anchor>
 
-      < Cart show={show} setShow={setShow}/>
+      < Cart/>
       
       </div>
         <h1 className="title accent1">COSMO</h1>

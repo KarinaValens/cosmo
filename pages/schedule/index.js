@@ -11,9 +11,14 @@ import Lineup from '../../components/app/Lineup'
 import BandsCards from '../../components/app/BandsCards'
 import TicketsDiv from '../../components/app/TicketsDiv'
 import { useState } from 'react'
+import Basket from '../../components/booking/Basket'
+import { useContext} from "react";
+import { AppContext } from '../../components/context/AppContext' 
 
 
 export default function Schedule({schedule, bands}) {
+
+  const {show}=useContext(AppContext)
 
   //const { Midgard : {mon, tue , wen , thu , fri , sat ,sun}}= schedule;
    const [filter, setFilter] = useState("mon");
@@ -22,14 +27,17 @@ export default function Schedule({schedule, bands}) {
 
   return (
     <>
-     <Header />
-
-    <div className="container">
-      <Head>
+  <Head>
       <title>The Festival | Schedule</title>
         <meta name="description" content="This is my KEA thrid semester Frontend Elective exam" />
         <meta name="keywords" content="festival, app, schedule, music, exam, reactjs, nextjs"></meta>
-      </Head>       
+      </Head>  
+      <Header />
+    <div className="container">
+     
+
+      {show ? <Basket/> : true}     
+     
       <main className='main'>
         <Filtering setSearch={setSearch} setGenre={setGenre}/>
         <Days schedule={schedule} setFilter={setFilter}/> 

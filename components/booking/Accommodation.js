@@ -1,29 +1,33 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { AppContext } from "../context/AppContext";
 
 
 
 
-export default function Accommodation() {
+export default function Accommodation({spots}) {
 
-  const {handleChange , checkbox}=useContext(AppContext)
-
+  const {handleChange , checkbox}=useContext(AppContext);
+  //console.log(spots[0].available<=0)
 
   return (
-    <div>
+    <div>   
     <h3>Camping Area:</h3>
         <label>Svartheim: 
             <input onChange={handleChange} 
                    name="accommodation" 
                    value="Svartheim" 
-                   type="radio"/>
+                   type="radio"
+                   disabled={spots[0].available <= 0}
+                   />
         </label>
 
         <label>Nilfheim: 
             <input onChange={handleChange} 
                    name="accommodation" 
                    value="Nilfheim"
-                   type="radio"/>
+                   type="radio"
+                   disabled={spots[1].available <= 0}
+                    />
         </label>
 
         <label>Helheim: 
@@ -31,6 +35,7 @@ export default function Accommodation() {
                    name="accommodation" 
                    value="Helheim" 
                    type="radio"
+                   disabled={spots[2].available <= 0}
                   />
         </label>
 
@@ -38,14 +43,18 @@ export default function Accommodation() {
             <input onChange={handleChange} 
                    name="accommodation" 
                    value="Muspelheim" 
-                   type="radio"/>
+                   type="radio"
+                   disabled={spots[3].available <= 0}
+                   />
             </label>
 
         <label>Alfheim: 
             <input onChange={handleChange} 
             name="accommodation" 
             value="Alfheim" 
-            type="radio"/>
+            type="radio"
+            disabled={spots[4].available <= 0}
+            />
         </label>  
 
         <label>Green Camping: 
