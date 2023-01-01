@@ -15,7 +15,7 @@ export default function Accommodation({spots}) {
         <label key="index">Svartheim: 
             <input onChange={handleChange} 
                    name="accommodation" 
-                   value="Svartheim" 
+                   value={spots[0].area} 
                    type="radio"
                    disabled={spots[0].available < totalTickets}
                    />
@@ -24,7 +24,7 @@ export default function Accommodation({spots}) {
         <label>Nilfheim: 
             <input onChange={handleChange} 
                    name="accommodation" 
-                   value="Nilfheim"
+                   value={spots[1].area}
                    type="radio"
                    disabled={spots[1].available < totalTickets}
 
@@ -34,7 +34,7 @@ export default function Accommodation({spots}) {
         <label>Helheim: 
             <input onChange={handleChange} 
                    name="accommodation" 
-                   value="Helheim" 
+                   value={spots[2].area} 
                    type="radio"
                    disabled={spots[2].available < totalTickets}
 
@@ -44,7 +44,7 @@ export default function Accommodation({spots}) {
         <label>Muspelheim: 
             <input onChange={handleChange} 
                    name="accommodation" 
-                   value="Muspelheim" 
+                   value={spots[3].area} 
                    type="radio"
                    disabled={spots[3].available < totalTickets}
 
@@ -54,7 +54,7 @@ export default function Accommodation({spots}) {
         <label>Alfheim: 
             <input onChange={handleChange} 
             name="accommodation" 
-            value="Alfheim" 
+            value={spots[4].area} 
             type="radio"
             disabled={spots[4].available < totalTickets}
             />
