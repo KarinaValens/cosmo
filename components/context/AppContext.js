@@ -6,25 +6,27 @@ export const AppContext = createContext();//creates the context to use in the co
 
 export function AppContextProvider(props){
     //this function is the wrapper for the -aap.js page to pass all the props
+    const regularPrice= 799
+    const vipPrice = 1299
+    const greenPrice= 249
+    const tents2perPrice = 249
+    const tents3perPrice = 349
+
 
 /* ------- // Booking // ------- */
 const [tickets, setTickets]=useState({
     regular:"",
-    regularPrice:"799",
     vip:"",
-    vipPrice:"1299",
     greenCamping:"",
-    greenPrice:"249",
     tents2per:"",
-    tents2perPrice:"249",
     tents3per:"",
-    tents3perPrice:"349",
     accommodation:""
 });
 const handleChange = (e) => {
     /* this function handle all the necesary items to buy tickets at ones  using just one state setTickets*/
 const name = e.target.name
 const value = e.target.value
+//update the tickets state variable
 setTickets((previous)=>{
     return{...previous, [name]: value}
 })
@@ -42,7 +44,7 @@ const addToCart = (e) =>{
 
 const [show, setShow]=useState(false);
 
-const value={tickets, setTickets, cart, setCart, handleChange, checkbox, addToCart, show, setShow}
+const value={tickets, setTickets, regularPrice, vipPrice, tents2perPrice, tents3perPrice, greenPrice, cart, setCart, handleChange, checkbox, addToCart, show, setShow}
 
     return(
         <AppContext.Provider value={value}>

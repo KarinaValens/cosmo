@@ -6,8 +6,16 @@ import { AppContext } from "../context/AppContext";
 
 export default function Accommodation({spots}) {
 
-  const {handleChange , checkbox}=useContext(AppContext);
+  const {handleChange , checkbox, cart}=useContext(AppContext);
   //console.log(spots[0].available<=0)
+
+/*   let totalTickets = 0;
+
+cart.map((item)=>{
+  totalTickets+=item.regular + item.vip}
+  ) */
+  
+
 
   return (
     <div>   

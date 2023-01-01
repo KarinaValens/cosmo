@@ -5,7 +5,7 @@ import { AppContext } from "../context/AppContext";
 
 export default function Tickets() {
 
-  const {handleChange}=useContext(AppContext)
+  const {handleChange, regular}=useContext(AppContext)
 
 
   return (
@@ -17,8 +17,7 @@ export default function Tickets() {
         min="1" 
         max="15" 
         placeholder="1"/>
-    <p>799,-</p>
-    <output name="x" forhtml="regular regtick"/>
+    <output>{regular}</output>
     </label>
 
     <label>VIP Ticket: 
