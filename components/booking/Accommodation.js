@@ -1,4 +1,4 @@
-import { useContext} from "react";
+import { useContext, useEffect, useState} from "react";
 import { AppContext } from "../context/AppContext";
 
 
@@ -6,26 +6,18 @@ import { AppContext } from "../context/AppContext";
 
 export default function Accommodation({spots}) {
 
-  const {handleChange , checkbox, cart}=useContext(AppContext);
-  //console.log(spots[0].available<=0)
-
-/*   let totalTickets = 0;
-
-cart.map((item)=>{
-  totalTickets+=item.regular + item.vip}
-  ) */
-  
-
+  const {handleChange , checkbox, totalTickets}=useContext(AppContext);
 
   return (
     <div>   
     <h3>Camping Area:</h3>
-        <label>Svartheim: 
+    
+        <label key="index">Svartheim: 
             <input onChange={handleChange} 
                    name="accommodation" 
                    value="Svartheim" 
                    type="radio"
-                   disabled={spots[0].available <= 0}
+                   disabled={spots[0].available < totalTickets}
                    />
         </label>
 
@@ -34,7 +26,8 @@ cart.map((item)=>{
                    name="accommodation" 
                    value="Nilfheim"
                    type="radio"
-                   disabled={spots[1].available <= 0}
+                   disabled={spots[1].available < totalTickets}
+
                     />
         </label>
 
@@ -43,7 +36,8 @@ cart.map((item)=>{
                    name="accommodation" 
                    value="Helheim" 
                    type="radio"
-                   disabled={spots[2].available <= 0}
+                   disabled={spots[2].available < totalTickets}
+
                   />
         </label>
 
@@ -52,7 +46,8 @@ cart.map((item)=>{
                    name="accommodation" 
                    value="Muspelheim" 
                    type="radio"
-                   disabled={spots[3].available <= 0}
+                   disabled={spots[3].available < totalTickets}
+
                    />
             </label>
 
@@ -61,7 +56,7 @@ cart.map((item)=>{
             name="accommodation" 
             value="Alfheim" 
             type="radio"
-            disabled={spots[4].available <= 0}
+            disabled={spots[4].available < totalTickets}
             />
         </label>  
 
