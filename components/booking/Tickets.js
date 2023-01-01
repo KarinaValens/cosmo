@@ -28,7 +28,7 @@ export default function Tickets() {
         <output><span>{vipAmount}</span></output>
     </label>  
     
-    <p>Total tickets: {totalTickets}</p>
+    <p>Total tickets: {totalTickets >= 0 ? totalTickets : " "}</p>
 </div>
   )
 }

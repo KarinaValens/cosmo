@@ -50,7 +50,13 @@ if(name==="regular"){
 
 //this useeffect help me to keep the values of the regular and vip even when the form has changed so I can add thouse values to make the total
 useEffect(()=>{
-    setTotalTickets(parseInt(tickets.regular) + parseInt(tickets.vip))
+    if(tickets.regular && tickets.vip){
+        setTotalTickets(parseInt(tickets.regular) + parseInt(tickets.vip))
+    } else if(tickets.regular){
+        setTotalTickets(parseInt(tickets.regular))
+    } else{
+        setTotalTickets(parseInt(tickets.vip))
+    }
 },[tickets])
 
 
