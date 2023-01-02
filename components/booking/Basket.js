@@ -26,13 +26,11 @@ const [id, setId]=useState();
 
     fetch(`http://${url}reserve-spot`, options)
       .then((res) => res.json())
-      //.then((res) => setId(res.id))
-      .then((res) => console.log(res))
-
+      .then((res) => setId(res.id))
+      //.then((res) => console.log(res))
       .catch((err) => console.error(err));
         } 
 
-        console.log(id)
 
 
 
