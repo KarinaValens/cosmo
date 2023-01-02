@@ -38,10 +38,6 @@ export default function CheckoutForm() {
        <input type="text" maxLength="2" placeholder="exp-year " name="exp_year" id="year"/>
        <input type="text" maxLength="3" placeholder="segurity-number " name="svc" id="svc"/>
        <button name="button">Summit</button>
-
-
-
-
     </form>
     </>
   )

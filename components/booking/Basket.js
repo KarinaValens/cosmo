@@ -9,11 +9,12 @@ const url="localhost:8080/"
 export default function Basket() {
     
     
- const {tickets, totalTickets, checkbox, checked, regularPrice, vipPrice, tents2perPrice, tents3perPrice, greenPrice}=useContext(AppContext)
+ const {tickets, totalTickets,  checked, regularPrice, vipPrice, tents2perPrice, tents3perPrice, greenPrice}=useContext(AppContext)
  
  const payload={"area": tickets.accommodation.toString(), "amount":parseInt(totalTickets)}
 
 const [id, setId]=useState();
+const [showForm, setShowForm]=useState(false)
 
  function book() {
 
@@ -29,6 +30,9 @@ const [id, setId]=useState();
       .then((res) => setId(res.id))
       //.then((res) => console.log(res))
       .catch((err) => console.error(err));
+
+
+    setShowForm(true)
         } 
 
 function post(){}
@@ -116,9 +120,9 @@ return (
                                        
             </table>
 
-        <button onClick={book}>Book</button>
+    <button onClick={book}>Book</button>
         
-            <CheckoutForm id={id}/>
+     {showForm && <CheckoutForm id={id} />}  
     </>
   )
 }
