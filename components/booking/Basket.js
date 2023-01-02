@@ -31,6 +31,7 @@ const [id, setId]=useState();
       .catch((err) => console.error(err));
         } 
 
+function post(){}
 
 
 
@@ -115,7 +116,7 @@ return (
                                        
             </table>
 
-        <button onClick={book}>Buy Now</button>
+        <button onClick={book}>Book</button>
         
             <CheckoutForm id={id}/>
     </>

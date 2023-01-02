@@ -19,6 +19,7 @@ export default function CheckoutForm() {
     <>
     <h3>Ticket Holder Info</h3>
     <form ref={form}>
+      <>
          {[...Array(totalTickets)].map((i)=>(
          <div key={i++}>
          <label> Fullname
@@ -27,8 +28,20 @@ export default function CheckoutForm() {
          <label> email
          <input type="email" name="email" id={i} placehodelr="johndoe@mail.com"/>
          </label>
-       </div>
+       </div>       
        ))}
+       </>
+       <h3>Payment Info</h3>
+
+       <input type="text" required maxLength="16"  placeholder="number" name="card_num" id="number"/>
+       <input type="text" maxLength="2" placeholder="exp-month" name="month" id="date"/>
+       <input type="text" maxLength="2" placeholder="exp-year " name="exp_year" id="year"/>
+       <input type="text" maxLength="3" placeholder="segurity-number " name="svc" id="svc"/>
+       <button name="button">Summit</button>
+
+
+
+
     </form>
     </>
   )
