@@ -15,9 +15,12 @@ import Basket from '../../components/booking/Basket'
 import { useContext} from "react";
 import { AppContext } from '../../components/context/AppContext' 
 
+const url="localhost:8080/"
+//const url= "rough-snowflake-4981.fly.dev/"
+
 
 export default function Schedule({schedule, bands}) {
-
+  
   const {show}=useContext(AppContext)
 
   //const { Midgard : {mon, tue , wen , thu , fri , sat ,sun}}= schedule;
@@ -60,12 +63,12 @@ export default function Schedule({schedule, bands}) {
 
 
 export async function getServerSideProps(){
+  
+  
 const [scheduleRes, bandsRes] = await Promise.all([
-  fetch(`http://localhost:8080/schedule`),
-  //fetch("https://rough-snowflake-4981.fly.dev/schedule"), //karina URL:  (just in case)
+  fetch(`http://${url}schedule`),
 
-  fetch(`http://localhost:8080/bands#`)
-  //fetch("https://rough-snowflake-4981.fly.dev/bands") //karina URL:  (just in case)
+  fetch(`http://${url}bands#`)
 
 ]);
 const [schedule, bands]= await Promise.all([

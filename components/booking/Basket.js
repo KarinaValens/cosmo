@@ -1,13 +1,18 @@
-import { useContext} from "react";
+import { useContext, useState} from "react";
 import { AppContext } from "../context/AppContext";
 
 
+const url="localhost:8080/"
+//const url= "rough-snowflake-4981.fly.dev/"
 
 export default function Basket() {
     
+    
  const {tickets, totalTickets, checkbox, regularPrice, vipPrice, tents2perPrice, tents3perPrice, greenPrice}=useContext(AppContext)
  
-  const payload={"area": tickets.accommodation.toString(), "amount":parseInt(totalTickets)}
+ const payload={"area": tickets.accommodation.toString(), "amount":parseInt(totalTickets)}
+
+const [id, setId]=useState();
 
  function book() {
 
@@ -17,15 +22,14 @@ export default function Basket() {
         body: JSON.stringify(payload)
       };
 
-    const url="http://localhost:8080/reserve-spot"
-    //const url="https://rough-snowflake-4981.fly.dev/reserve-spot"
 
-    fetch(url, options)
-      .then((response) => response.json())
-      //.then((response) => console.log(response.id))
-      .then((response) => console.log(response))
+    fetch(`http://${url}reserve-spot`, options)
+      .then((res) => res.json())
+      .then((res) => setId(res.id))
       .catch((err) => console.error(err));
-  } 
+        } 
+//console.log(id)
+
 
 
     const regular=tickets.regular * regularPrice;
@@ -47,12 +51,10 @@ return (
                     <th>Price</th>
                     <th>Total</th>
                     </tr>
-                </thead>
-              
+                </thead>              
             
                 <tbody>
-
-                <tr key="index">
+                <tr>
                 <td>Regular tickets: </td>
                 <td>{tickets.regular}</td> 
                 <td>{regularPrice}</td> 

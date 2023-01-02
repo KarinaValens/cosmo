@@ -5,6 +5,7 @@ export const AppContext = createContext();//creates the context to use in the co
 
 
 export function AppContextProvider(props){
+
     //this function is the wrapper for the -aap.js page to pass all the props
     const regularPrice= 799
     const vipPrice = 1299

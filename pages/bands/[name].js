@@ -7,14 +7,16 @@ import youtube from "/public/media/youtube.png"
 import{useRouter} from "next/router"
 
 
+
+const url="localhost:8080/"
+  //const url= "rough-snowflake-4981.fly.dev/"
+
 export default function Band ({bands}) {
+
     const router = useRouter();
     const {name} = router.query
     const band = bands.find(band => band.name === name)
-    
-    const url= "http://localhost:8080/"//this is the url variable that I am using to get the pictures inside the return
-    //const url="https://rough-snowflake-4981.fly.dev/"
-    
+
     
     return (
     <> 
@@ -57,8 +59,7 @@ export default function Band ({bands}) {
 
 
 export async function getStaticPaths(){
-  const res = await fetch("http://localhost:8080/bands#");
-  //const res = await fetch("https://rough-snowflake-4981.fly.dev/bands"); //karina URL:  (just in case)
+  const res = await fetch(`http://${url}bands#`);
   
   const dataBands = await res.json();
   const paths = dataBands.map(band =>{
@@ -82,8 +83,7 @@ export async function getStaticProps(){
   - once we have the data, it put into the component
   - so the component can render with that data inside it  */
 
- const res = await fetch("http://localhost:8080/bands#");
- //const res = await fetch("https://rough-snowflake-4981.fly.dev/bands"); //karina URL:  (just in case)
+ const res = await fetch(`http://${url}bands#`);
 
   const data = await res.json();
 

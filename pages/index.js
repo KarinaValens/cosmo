@@ -8,6 +8,9 @@ import Tickets from '../components/booking/Tickets';
 import Tents from '../components/booking/Tents';
 
 
+const url="localhost:8080/"
+  //const url= "rough-snowflake-4981.fly.dev/"
+
 export default function Home({spots}) {
 //console.log(spots)
 const {show, addToCart} = useContext(AppContext);
@@ -35,8 +38,7 @@ const {show, addToCart} = useContext(AppContext);
 
 export async function getServerSideProps(){
   
-    const res = await fetch("http://localhost:8080/available-spots");
-    //const res = await fetch("https://rough-snowflake-4981.fly.dev/available-spots"); 
+    const res = await fetch(`http://${url}available-spots`);
    
      const data = await res.json();
   
