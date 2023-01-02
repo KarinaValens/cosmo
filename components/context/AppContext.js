@@ -26,8 +26,6 @@ const [tickets, setTickets]=useState({
 
 const [regularAmount, setRegularAmount]=useState()
 const [vipAmount, setVipAmount]=useState()
-const[regular, setRegular]=useState()
-const[vip, setVip]=useState()
 const[totalTickets, setTotalTickets]=useState()
 
 const handleChange = (e) => {
@@ -41,10 +39,8 @@ setTickets((previous)=>{
 })
 
 if(name==="regular"){
-    setRegular(value)
     setRegularAmount(value * regularPrice)
 }if(name==="vip"){
-    setVip(value) 
     setVipAmount( value * vipPrice)
 }
 }
@@ -63,13 +59,15 @@ useEffect(()=>{
 
 
 const checkbox=useRef();//to verify if the checkbox of the green camping in the accommodation component is checked
+
 /* -------- // Basket // -------- */
 const [cart, setCart]=useState([]);
 
+
 const addToCart = (e) =>{  
-    e.preventDefault();// I need to erase this ones I figure out how to stop the page to reload when clicking the add to car button
+    e.preventDefault();
     cart.push(tickets)// this pushes the tickets objects storage in the state setTickets into the stage cart
-    setCart(cart.concat())   
+    setCart(cart.concat()) 
     }
 
 

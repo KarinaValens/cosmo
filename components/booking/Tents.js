@@ -8,6 +8,9 @@ function Tents() {
 
   return (
     <div>
+        
+        <h3>Tents:</h3>
+
         <label>Help setting 2 person tent: 
             <input type="number"
             onChange={handleChange}

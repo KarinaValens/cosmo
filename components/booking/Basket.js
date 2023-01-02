@@ -1,5 +1,6 @@
 import { useContext, useState} from "react";
 import { AppContext } from "../context/AppContext";
+import CheckoutForm from "./CheckoutForm";
 
 
 const url="localhost:8080/"
@@ -30,8 +31,6 @@ const [id, setId]=useState();
         } 
 //console.log(id)
 
-
-
     const regular=tickets.regular * regularPrice;
     const vip=tickets.vip * vipPrice;
     const tents2per=tickets.tents2per * tents2perPrice;
@@ -43,6 +42,8 @@ const [id, setId]=useState();
 
 return (
         <>
+            <h3>Order Detail</h3>
+
             <table>
                 <thead>
                     <tr>
@@ -114,6 +115,8 @@ return (
             </table>
 
         <button onClick={book}>Buy Now</button>
+
+        <CheckoutForm/>
 
     </>
   )

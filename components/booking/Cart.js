@@ -9,7 +9,7 @@ export default function Cart() {
   
   const {show, setShow} = useContext(AppContext);
 
-    /* onClick={()=>setShow(!show)}= make the show function a toogle to open and close on click */
+    /* onClick={()=>setShow(!show)}= make the show function a toogle to open and close te basket on click */
   return (
     <div>        
         <button onClick={()=>setShow(!show)}>

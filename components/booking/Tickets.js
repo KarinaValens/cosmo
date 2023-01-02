@@ -8,7 +8,9 @@ export default function Tickets() {
   const {handleChange, totalTickets, regularAmount, vipAmount}=useContext(AppContext)
   
   return (
-    <div>        
+    <div>
+          <h3>Tickets:</h3>
+
     <label>Regular Ticket: 
         <input onChange={handleChange} 
         name="regular" 

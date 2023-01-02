@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useContext } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { AppContext } from '../components/context/AppContext';
 import Basket from '../components/booking/Basket'
 import Header from '../components/Header'
@@ -12,8 +12,9 @@ const url="localhost:8080/"
   //const url= "rough-snowflake-4981.fly.dev/"
 
 export default function Home({spots}) {
-//console.log(spots)
-const {show, addToCart} = useContext(AppContext);
+
+const {show,  addToCart, showForm} = useContext(AppContext);
+
 
   return (
     <>
@@ -22,16 +23,23 @@ const {show, addToCart} = useContext(AppContext);
           <meta name="description" content="This is my KEA thrid semester Frontend Elective exam" />
           <meta name="keywords" content="festival, app, schedule, music, exam, reactjs, nextjs"></meta>
         </Head> 
+
         <Header/>
+
         <div className="container">
-        {show ? <Basket/> : true}
-    <form>
-        <Tickets />
-        <Accommodation spots={spots}/>
-        <Tents />
-        <button onClick={addToCart}>Add to Basket</button>        
-    </form>
-    </div>    
+
+        {show ? 
+        
+        <Basket/> :  
+        
+        <form>
+            <Tickets />
+            <Accommodation spots={spots}/>
+            <Tents />
+            <button onClick={addToCart}>Add to Basket</button>        
+        </form> }
+      
+    </div>
     </>
   )
 }
@@ -41,9 +49,7 @@ export async function getServerSideProps(){
     const res = await fetch(`http://${url}available-spots`);
    
      const data = await res.json();
-  
-     //console.log(data)
-   
+
      return{
          props: { 
           spots : data } 
