@@ -59,7 +59,7 @@ useEffect(()=>{
 
 
 const checkbox=useRef();//to verify if the checkbox of the green camping in the accommodation component is checked
-
+const [checked, setChecket]=useState(false)
 /* -------- // Basket // -------- */
 const [cart, setCart]=useState([]);
 
@@ -74,8 +74,13 @@ const addToCart = (e) =>{
 /* ---- // cart // ------ */
 const [show, setShow]=useState(false);
 
-const value={tickets, setTickets, totalTickets, regularPrice, regularAmount, vipPrice, vipAmount, tents2perPrice, tents3perPrice,
-     greenPrice, cart, setCart, handleChange, checkbox, addToCart, show, setShow}
+const value={
+    tickets, setTickets, totalTickets, 
+    regularPrice,  vipPrice,  tents2perPrice, tents3perPrice, greenPrice, 
+    regularAmount, vipAmount, 
+    cart, setCart, show, setShow,
+    handleChange, addToCart, 
+    checkbox, checked, setChecket}
 
     return(
         <AppContext.Provider value={value}>

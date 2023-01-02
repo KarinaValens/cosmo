@@ -6,8 +6,9 @@ import { AppContext } from "../context/AppContext";
 
 export default function Accommodation({spots}) {
 
-  const {handleChange , checkbox, totalTickets}=useContext(AppContext);
-
+  const {handleChange , checkbox, checked, setChecket, totalTickets}=useContext(AppContext);
+ 
+  
   return (
     <div>   
     <h3>Camping Area:</h3>
@@ -62,10 +63,12 @@ export default function Accommodation({spots}) {
 
         <label>Green Camping: 
         <input onChange={handleChange} 
+        onClick={()=>{setChecket(!checked)}}
         name="greenCamping" 
         value=" "  
         type="checkbox"
         ref={checkbox}
+        checked={checked}
         />
       </label>      
         

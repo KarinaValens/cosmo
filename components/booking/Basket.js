@@ -9,7 +9,7 @@ const url="localhost:8080/"
 export default function Basket() {
     
     
- const {tickets, totalTickets, checkbox, regularPrice, vipPrice, tents2perPrice, tents3perPrice, greenPrice}=useContext(AppContext)
+ const {tickets, totalTickets, checkbox, checked, regularPrice, vipPrice, tents2perPrice, tents3perPrice, greenPrice}=useContext(AppContext)
  
  const payload={"area": tickets.accommodation.toString(), "amount":parseInt(totalTickets)}
 
@@ -26,24 +26,27 @@ const [id, setId]=useState();
 
     fetch(`http://${url}reserve-spot`, options)
       .then((res) => res.json())
-      .then((res) => setId(res.id))
+      //.then((res) => setId(res.id))
+      .then((res) => console.log(res))
+
       .catch((err) => console.error(err));
         } 
-//console.log(id)
+
+        console.log(id)
+
+
 
     const regular=tickets.regular * regularPrice;
     const vip=tickets.vip * vipPrice;
     const tents2per=tickets.tents2per * tents2perPrice;
     const tents3per=tickets.tents3per * tents3perPrice;
-    const greenCamping=parseInt(checkbox.current.checked ? greenPrice : 0);//the result of this ternary operator was an string so I use parseInt method to convert it to a number
+    const greenCamping = parseInt(checked ? greenPrice : 0);//the result of this ternary operator was an string so I use parseInt method to convert it to a number
     const subtotal= regular + vip + tents2per + tents3per + greenCamping ;
     const bookingFee= 99;
     const total= subtotal + bookingFee;
 
 return (
         <>
-            <h3>Order Detail</h3>
-
             <table>
                 <thead>
                     <tr>
@@ -115,9 +118,8 @@ return (
             </table>
 
         <button onClick={book}>Buy Now</button>
-
-        <CheckoutForm/>
-
+        
+            <CheckoutForm id={id}/>
     </>
   )
 }
