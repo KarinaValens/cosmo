@@ -27,18 +27,28 @@ export default function CheckoutForm({id}) {
     
     fetch(`http://${url}fullfill-reservation`, options)
     .then((res) => res.json())
-    //.then((res) => console.log(res))
     .catch((err) => console.error(err));
     
     /*  Making the second request POST to supabase */
 
     const data={}
-    //console.log(data)
-
-    const tickets_guess=
-    //creates an array of objects and push it into the tickets_guess const to itinerate in the post request
-    Array.from(form.current.elements).map((element) => 
-    ({ [element.name]: element.value }));
+  
+    const tickets_guess = Array.from(form.current.elements).reduce((arr, element, i) => {
+      if (i % 3 === 0) {
+        arr.push({
+          fullname: form.current.elements[i].value,
+          email: form.current.elements[i + 1].value,
+          kind_ticket: form.current.elements[i + 2].value,
+        });
+      }
+      return arr;
+    }, []);
+    
+    //here the reduce function creates an array of objects from the form element.
+    //the reduce() itinerates over the form elements and accumulates a result in an array.
+    //the result is initialized to an empty array and the function is passed the current element and its index as argument of each intineration
+    // If the current element is the first element in a set of three (if it is multiple of 3 then the function creates an object) 
+    
  
     data.regular_tickets= parseInt(tickets.regular),
     data.vip_tickets= parseInt(tickets.vip),

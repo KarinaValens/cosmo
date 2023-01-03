@@ -28,7 +28,6 @@ const [showForm, setShowForm]=useState(false)
     fetch(`http://${url}reserve-spot`, options)
       .then((res) => res.json())
       .then((res) => setId(res.id))
-      //.then((res) => console.log(res))
       .catch((err) => console.error(err));
 
     //show the ticket horlders and payment form
