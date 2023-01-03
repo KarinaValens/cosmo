@@ -5,32 +5,47 @@ import { AppContext } from "../context/AppContext";
 
 export default function Tickets() {
 
-  const {handleChange, totalTickets, regularAmount, vipAmount}=useContext(AppContext)
+  const {handleChange, totalTickets, regularAmount, vipAmount, regularPrice, vipPrice}=useContext(AppContext)
   
   return (
-    <div>
+    <div >
           <h3>Tickets:</h3>
+          <div className="inputTickets">
 
-    <label>Regular Ticket: 
-        <input onChange={handleChange} 
+    <label>
+    <span>Regular : </span>
+        <input className="input" onChange={handleChange} 
         name="regular" 
         type="number" 
-        min="1" 
-        max="15" 
+        required
+        min= "1"
+        max="10" 
+        maxLength={3}
         placeholder="1"/>
-        <output><span>{regularAmount}</span></output>
+        <span> x ${regularPrice}</span>
+        <output>
+          <span> = ${regularAmount}</span>
+        </output>
     </label>
 
-    <label>VIP Ticket: 
-        <input onChange={handleChange} 
+    <label>
+    <span>VIP: </span>
+        <input className="input" onChange={handleChange} 
         name="vip" 
         type="number" 
-        min="1" max="15" 
+        required
+        min= "1"
+        max="10" 
+        maxLength={3} 
         placeholder="1"/>
-        <output><span>{vipAmount}</span></output>
-    </label>  
-    
-    <p>Total tickets: {totalTickets >= 0 ? totalTickets : " "}</p>
+        <span> x ${vipPrice}</span>
+        <output>
+          <span> = ${vipAmount}</span>
+        </output>
+    </label> 
+    </div>
+    <h4>Total Tickets: {totalTickets >= 0 ? totalTickets : " "}</h4>
+
 </div>
   )
 }

@@ -13,7 +13,7 @@ export default function Cart() {
   return (
     <div>        
         <button onClick={()=>setShow(!show)}>
-             <Image  src={cart_shopping_solid} alt={""} width={"20"} height={"20"} priority sizes="(max-width: 700px) 100vw, 700px" />
+             <Image  src={cart_shopping_solid} alt={""} width={"30"} height={"30"}  priority sizes="(max-width: 700px) 100vw, 700px" />
         </button>
         <span className="quantity">{parseInt(totalTickets) >= 0 ? parseInt(totalTickets): 0}</span>
         

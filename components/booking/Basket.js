@@ -31,13 +31,9 @@ const [showForm, setShowForm]=useState(false)
       //.then((res) => console.log(res))
       .catch((err) => console.error(err));
 
-
+    //show the ticket horlders and payment form
     setShowForm(true)
         } 
-
-function post(){}
-
-
 
     const regular=tickets.regular * regularPrice;
     const vip=tickets.vip * vipPrice;
@@ -120,7 +116,7 @@ return (
                                        
             </table>
 
-    <button onClick={book}>Book</button>
+    <button onClick={book}>Confirm Reservation</button>
         
      {showForm && <CheckoutForm id={id} />}  
     </>

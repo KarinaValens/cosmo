@@ -27,6 +27,8 @@ const [tickets, setTickets]=useState({
 const [regularAmount, setRegularAmount]=useState()
 const [vipAmount, setVipAmount]=useState()
 const[totalTickets, setTotalTickets]=useState()
+const[tent2Amount, settent2Amount]=useState();
+const[tent3Amount, settent3Amount]=useState();
 
 const handleChange = (e) => {
     /* this function handle all the necesary items to buy tickets at ones  using just one state setTickets*/
@@ -42,7 +44,13 @@ if(name==="regular"){
     setRegularAmount(value * regularPrice)
 }if(name==="vip"){
     setVipAmount( value * vipPrice)
+} if (name ==="tents2per"){
+    settent2Amount( value * tents2perPrice)
+} if (name ==="tents3per"){
+    settent3Amount( value * tents3perPrice)
 }
+
+
 }
 
 //this useeffect help me to keep the values of the regular and vip even when the form has changed so I can add thouse values to make the total
@@ -80,7 +88,8 @@ const value={
     regularAmount, vipAmount, 
     cart, setCart, show, setShow,
     handleChange, addToCart, 
-    checkbox, checked, setChecket}
+    checkbox, checked, setChecket,
+    tent2Amount, tent3Amount}
 
     return(
         <AppContext.Provider value={value}>

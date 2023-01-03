@@ -268,10 +268,6 @@ p {
   border-color: #0070f3;
 }
 
-/* a {
-  color: inherit;
-} */
-
 /* ------------ // Bands Cards // -------------- */
 .carousel {
   position: relative;
@@ -434,15 +430,47 @@ p {
 
 form {
   display: flex;
+  width: 100%;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
+}
+
+label {
+  font-size: medium;
+}
+
+.inputTickets {
+  display: flex;
+  gap: 2rem;
+}
+
+.inputTickets label {
+  padding: 2rem;
+  color: var(--color-neutral1);
+}
+.inputTickets label:first-child {
+  background-color: var(--color-accent4);
+}
+.inputTickets label:last-child {
+  background-color: var(--color-accent5);
+}
+
+.inputTickets input {
+  color: var(--color-accent7);
+  font-size: medium;
+  padding: 0.5rem;
+}
+
+output {
+  margin-left: 0.8rem;
 }
 
 /* ---------- // Basket // --------------------- */
 .basket-container {
-  margin-top: 1rem;
+  margin: 1rem auto;
   display: flex;
-  width: 100%;
+  width: 90%;
   align-items: center;
   justify-content: space-around;
 }
@@ -487,8 +515,6 @@ form {
   .show-table {
     max-width: 80%;
     margin: auto;
-    /*     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
- */
   }
   .show-table li {
     font-size: medium;
