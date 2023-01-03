@@ -1,12 +1,9 @@
-import {useRef, useContext, useState} from 'react'
+import {useRef, useContext} from 'react'
 import { AppContext } from '../context/AppContext';
 
 
 const url="localhost:8080/"
 //const url= "rough-snowflake-4981.fly.dev/"
-
-/* Sending the info-data to  supabse */
-
 
 
 export default function CheckoutForm({id}) {
@@ -76,8 +73,6 @@ export default function CheckoutForm({id}) {
   }
 
 
-  /* The Array(totalTickets) creates an array with totalTickets number of elements, and the ... 
-  spreads the elements of this array into individual arguments for the map function. */
 
  
   return (
@@ -85,7 +80,10 @@ export default function CheckoutForm({id}) {
     <h3>Ticket Holder Info</h3>
     <form ref={form}>
       <>
-
+      
+      {/* The Array(totalTickets) creates an array with totalTickets number of elements, and the 
+  ...spreads the elements of this array into individual arguments for the map function. 
+ */}
          {[...Array(totalTickets)].map((i)=>(
          <div key={i++}>
          <label> <span>Fullname</span> 
