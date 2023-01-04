@@ -34,7 +34,7 @@ function fullfillReservation(e){
         
           const data={}
         
-          const tickets_guess_reg = Array.from(formReg.current.elements).reduce((arr, element, i) => {
+          const tickets_guess_reg = tickets.regular ? (Array.from(formReg.current.elements).reduce((arr, element, i) => {
             if (i % 2 === 0) {
               arr.push({
                 fullname: formReg.current.elements[i].value,
@@ -42,9 +42,9 @@ function fullfillReservation(e){
                });
             }
             return arr;
-          }, []);
+          }, [])):false
         
-          const tickets_guess_vip = Array.from(formVip.current.elements).reduce((arr, element, i) => {
+          const tickets_guess_vip = tickets.vip ? (Array.from(formVip.current.elements).reduce((arr, element, i) => {
             if (i % 2 === 0) {
               arr.push({
                 fullname: formVip.current.elements[i].value,
@@ -52,7 +52,7 @@ function fullfillReservation(e){
              });
             }
             return arr;
-          }, []);
+          }, [])): false
 
           //here the reduce function creates an array of objects from the form element.
           //the reduce() itinerates over the form elements and accumulates a result in an array.
@@ -102,10 +102,10 @@ function fullfillReservation(e){
          {[...Array(parseInt(tickets.regular))].map((i)=>(
          <div key={i++}>
          <label> <span>Fullname</span> 
-         <input  type="text" name="fullname" required={true} id={i} placeholder="John Doe"/>
+         <input  type="text" name="fullname"  id={i} placeholder="John Doe"/>
          </label>
          <label><span>emain</span> 
-         <input  type="email" name="email" required={true} id={i} placeholder="johndoe@mail.com"/>
+         <input  type="email" name="email"  id={i} placeholder="johndoe@mail.com"/>
                   </label>
        </div>       
        ))}
@@ -119,10 +119,10 @@ function fullfillReservation(e){
      {[...Array(parseInt(tickets.vip))].map((i)=>(
       <div key={i++}>
       <label> <span>Fullname</span> 
-      <input  type="text" name="fullname" required={true} id={i} placeholder="John Doe" />
+      <input  type="text" name="fullname"  id={i} placeholder="John Doe" />
       </label>
       <label><span>email</span> 
-      <input  type="email" name="email" required={true} id={i} placeholder="johndoe@mail.com" />
+      <input  type="email" name="email"  id={i} placeholder="johndoe@mail.com" />
       </label>
      </div>     
 ))}  
