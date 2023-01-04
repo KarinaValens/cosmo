@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useContext, useRef, useState } from 'react';
+import { useContext} from 'react';
 import { AppContext } from '../components/context/AppContext';
 import Basket from '../components/booking/Basket'
 import Header from '../components/layout/Header'
@@ -13,8 +13,7 @@ const url="localhost:8080/"
 
 export default function Home({spots}) {
 
-const {show,  addToCart, showForm} = useContext(AppContext);
-
+const {show,  addToCart} = useContext(AppContext);
 
   return (
     <>

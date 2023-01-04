@@ -5,7 +5,7 @@ import { AppContext } from "../context/AppContext";
 
 export default function Tickets() {
 
-  const {handleChange, totalTickets, regularAmount, vipAmount, regularPrice, vipPrice}=useContext(AppContext)
+  const {handleChange, totalTickets, tickets, regularAmount, vipAmount, regularPrice, vipPrice}=useContext(AppContext)
   
   return (
     <div >
@@ -17,11 +17,10 @@ export default function Tickets() {
         <input className="input" onChange={handleChange} 
         name="regular" 
         type="number" 
-        required
-        min= "1"
+        min= {tickets.vip <= 0 ? 1 : 0}
         max="10" 
         maxLength={3}
-        placeholder="1"/>
+        placeholder="0"/>
         <span> x ${regularPrice}</span>
         <output>
           <span> = ${regularAmount}</span>
@@ -33,11 +32,10 @@ export default function Tickets() {
         <input className="input" onChange={handleChange} 
         name="vip" 
         type="number" 
-        required
-        min= "1"
+        min= {tickets.regular <= 0 ? 1 : 0}
         max="10" 
         maxLength={3} 
-        placeholder="1"/>
+        placeholder="0"/>
         <span> x ${vipPrice}</span>
         <output>
           <span> = ${vipAmount}</span>

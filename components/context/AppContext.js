@@ -38,7 +38,7 @@ const value = e.target.value
 //update the tickets state variable
 setTickets((previous)=>{
     return{...previous, [name]: value}
-})
+}) // creates an object based in the previous state value
 
 if(name==="regular"){
     setRegularAmount(value * regularPrice)

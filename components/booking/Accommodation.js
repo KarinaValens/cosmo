@@ -36,13 +36,13 @@ export default function Accommodation({spots}) {
           <h3>Camping Area:</h3>
 
         <div className="grid"> 
-        <label className="card border1">Helheim: 
+        <label className="card border1">Helheim:            
             <input onChange={handleChange} 
+                   required
                    name="accommodation" 
                    value={spots[2].area} 
                    type="radio"
                    disabled={spots[2].available < totalTickets}
-
                   />
         </label>
 
