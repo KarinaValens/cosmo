@@ -23,7 +23,8 @@
 
 * {
   box-sizing: border-box;
-  /* border: dotted 1px hotpink; */
+  /*   border: dotted 1px hotpink;
+ */
 }
 
 html,
@@ -107,7 +108,7 @@ header,
   background-blend-mode: multiply;
   text-align: center;
   margin-bottom: 1rem;
-  height: 50vh;
+  height: 60vh;
 }
 
 .main {
@@ -438,10 +439,12 @@ form {
 
 label {
   font-size: medium;
+  border-radius: 7px;
 }
 
 .inputTickets {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
@@ -471,8 +474,7 @@ output {
   margin: 1rem auto;
   display: flex;
   width: 90%;
-  align-items: center;
-  justify-content: space-around;
+  align-items: baseline;
 }
 
 .basket-container a {
@@ -481,10 +483,12 @@ output {
 
 .quantity {
   color: var(--color-accent7);
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  font-family: var(--font-headings);
   position: relative;
-  top: -15px;
-  left: -5px;
+  top: -3rem;
+  left: 2px;
 }
 
 /* small tablet styles */
@@ -502,7 +506,7 @@ output {
   }
 
   header {
-    height: 25rem;
+    height: 28rem;
   }
 
   .headerDays {
@@ -568,11 +572,19 @@ output {
   .bandPageHero li {
     font-size: 1.2rem;
   }
+
+  .inputTickets {
+    flex-direction: row;
+  }
+
+  .inputTickets label {
+    padding: 1rem 0.7rem;
+  }
 }
 /* large tablets and laptop styles */
 @media screen and (min-width: 960px) {
   header {
-    height: 34rem;
+    height: 38rem;
   }
   .title {
     font: 100 18rem/1.15 var(--font-headings);
@@ -589,6 +601,10 @@ output {
 
   .footer .container {
     align-items: baseline;
+  }
+
+  .inputTickets label {
+    padding: 2rem;
   }
 }
 

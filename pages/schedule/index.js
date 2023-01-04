@@ -1,4 +1,4 @@
-import Header from '../../components/Header'
+import Header from '../../components/layout/Header'
 import Head from 'next/head'
 import Filtering from '../../components/app/Filtering'
 import Days from '../../components/app/Days'

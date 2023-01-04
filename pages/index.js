@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useContext, useRef, useState } from 'react';
 import { AppContext } from '../components/context/AppContext';
 import Basket from '../components/booking/Basket'
-import Header from '../components/Header'
+import Header from '../components/layout/Header'
 import Accommodation from '../components/booking/Accommodation';
 import Tickets from '../components/booking/Tickets';
 import Tents from '../components/booking/Tents';

@@ -1,10 +1,10 @@
 
 import Image from "next/image"//this module automaticaly automise the img with Squoosh
-import dark_theme_logo from "../public/media/dark_theme_logo.png" // it is necesary import the images as so
+import dark_theme_logo from "../../public/media/dark_theme_logo.png" // it is necesary import the images as so
 import Anchor from "./Anchor"
-import Cart from "./booking/Cart"
-import Nav from "./Nav"
-import Basket from "./booking/Basket";
+import Cart from "../booking/Cart"
+ import Nav from "./Nav"
+import Basket from "../booking/Basket";
 
 
 //the images are place in the public folder inside media
@@ -14,14 +14,14 @@ export default function Header() {
 
   return (
     <header>
+     
       <Nav/>
       
       <div className="basket-container">
         <Anchor  href={"/"} >
           <Image  src={dark_theme_logo} alt={""} width={"50"} height={"45"} priority sizes="(max-width: 700px) 100vw, 700px" />
         </Anchor>
-
-      < Cart/>      
+        < Cart/>      
       </div>
 
 

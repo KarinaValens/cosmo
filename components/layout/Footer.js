@@ -1,10 +1,10 @@
 import { useRef, useState } from "react"
 
 import Image from "next/image"//this module automaticaly automise the img with Squoosh
-import dark_theme_logo from "../public/media/dark_theme_logo.png" // it is necesary import the images as so
-import instagram from "../public/media/instagram.png" 
-import facebook from "../public/media/facebook.png" 
-import youtube from "../public/media/youtube.png" 
+import dark_theme_logo from "../../public/media/dark_theme_logo.png" // it is necesary import the images as so
+import instagram from "../../public/media/instagram.png" 
+import facebook from "../../public/media/facebook.png" 
+import youtube from "../../public/media/youtube.png" 
 
 function info(submit) {
 
