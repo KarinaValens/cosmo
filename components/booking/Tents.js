@@ -7,37 +7,43 @@ function Tents() {
 
 
   return (
-    <div>
+    <>    
+    
       <h3>Help setting tents</h3>
-        <label> 2 pax: 
-            <input type="number"
+    <div className="tents">
+        <label> 
+        <span> for 2  pax $ {tents2perPrice} each </span>
+            <input className="accent2" type="number"
             onChange={handleChange}
             name="tents2per" 
             min= "0"
             max="10" 
-            /* maxLength={3} */
             placeholder="0"/>
-            <span> x ${tents2perPrice}</span>
+            
             <output>
-            <span> = ${tent2Amount}</span>
+            = $ {tent2Amount}
             </output>
+            
         </label>
     
 
-    <label> Tent 3 pax: 
-        <input   type="number"
+        <label>for 3 pax
+        <span> $ {tents3perPrice} each </span>
+        <input className="accent2" type="number"
         onChange={handleChange}
         name="tents3per"
         min= "0"
         max="10" 
-        /* maxLength={3} */
         placeholder="0"/>
-        <span> x ${tents3perPrice}</span>
+        
             <output>
-            <span> = ${tent3Amount}</span>
+            <span> = $ {tent3Amount}</span>
             </output>
+            
     </label>
     </div>
+    </>
+
   )
 }
 

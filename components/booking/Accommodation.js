@@ -12,7 +12,10 @@ export default function Accommodation({spots}) {
   return (
     
     <div className="container">  
-    <div className="grid">         
+              <h3>Camping Area:</h3>
+
+    <div className="grid">    
+         
         <label className="card border1">Svartheim: 
             <input onChange={handleChange} 
                    name="accommodation" 
@@ -32,10 +35,9 @@ export default function Accommodation({spots}) {
                     />
         </label>
 
-        </div>
-          <h3>Camping Area:</h3>
+        
 
-        <div className="grid"> 
+        
         <label className="card border1">Helheim:            
             <input onChange={handleChange} 
                    required

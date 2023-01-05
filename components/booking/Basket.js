@@ -56,54 +56,59 @@ return (
                 </thead>              
             
                 <tbody>
-                <tr>
+                    {tickets.regular != 0 ? <tr>
                 <td>Regular tickets: </td>
                 <td>{tickets.regular}</td> 
-                <td>{regularPrice}</td> 
-                <td>{regular}</td> 
-                </tr>
-
+                <td>$ {regularPrice}</td> 
+                <td>$ {regular}</td> 
+                </tr>:false}
+                
+                {tickets.vip != 0 ?
                 <tr>
                 <td>VIP tickets:</td>
                 <td>{tickets.vip}</td>
-                <td>{vipPrice}</td>
-                <td>{vip}</td> 
-                </tr>
-              
+                <td>$ {vipPrice}</td>
+                <td>$ {vip}</td> 
+                </tr>:false}
+
+
+                {tickets.tents2per != 0 ?
                 <tr>
                 <td>2 person tent:</td>
                 <td>{tickets.tents2per}</td>
-                <td>{tents2perPrice}</td>
-                <td>{tents2per}</td>
-                </tr>
+                <td>$ {tents2perPrice}</td>
+                <td>$ {tents2per}</td>
+                </tr>:false}
                 
+                {tickets.tents3per != 0 ?
                 <tr>
                 <td>3 person tent:</td>
                 <td>{tickets.tents3per}</td>
-                <td>{tents3perPrice}</td>
-                <td>{tents3per}</td>
-                </tr>
+                <td>$ {tents3perPrice}</td>
+                <td>$ {tents3per}</td>
+                </tr>:false}
 
+                {checked ?
                 <tr>    
                 <td>Green Camping:</td>
                 <td>{tickets.greenCamping}</td>
-                <td>{greenPrice}</td> 
-                <td>{greenCamping}</td> 
-                </tr>
+                <td>$ {greenPrice}</td> 
+                <td>$ {greenCamping}</td> 
+                </tr>:false}
 
                 <tr>
                     <td>Sub-total</td>
-                    <td>{subtotal}</td>
+                    <td>$ {subtotal}</td>
                 </tr>
 
                 <tr>
                     <td>Booking fee</td>
-                    <td>{bookingFee}</td>
+                    <td>$ {bookingFee}</td>
                 </tr>
 
                 <tr>
                     <td>Total</td>
-                    <td>{total}</td>
+                    <td>$ {total}</td>
                 </tr>
 
                 <tr>
@@ -115,7 +120,7 @@ return (
                                        
             </table>
 
-    <button onClick={book}>Confirm Reservation</button>
+    <button className='button border2 accent1' onClick={book}>Confirm Reservation</button>
         
      {showForm && <CheckoutForm id={id} />}  
     </>

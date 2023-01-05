@@ -97,23 +97,22 @@ function fullfillReservation(e){
       
   return (
     <>
-    <h3>Ticket Holder Info</h3>
-    
-    {tickets.regular ? (    <form ref={formReg}>
+    <h3 className='checkout-title'>Ticket Holder Info</h3>    
+    {tickets.regular ? (    <form className='checkout' ref={formReg}>
       <>
       <span>Regular</span>
       {/* The Array(totalTickets) creates an array with totalTickets number of elements, and the 
   ...spreads the elements of this array into individual arguments for the map function. 
  */}
          {[...Array(parseInt(tickets.regular))].map((i)=>(
-         <div key={i++}>
-         <label> <span>Fullname</span> 
-         <input  type="text" name="fullname"  id={i} placeholder="John Doe"/>
+         <div key={i++} className="dynamic-inputs">
+         <label> <span>Fullname</span> </label>
+         <input className="input-footer border1" type="text" name="fullname"  id={i} placeholder="John Doe"/>
        
-         </label>
-         <label><span>email</span> 
-         <input  type="email" name="email"  id={i} placeholder="johndoe@mail.com"/>
-                  </label>
+         
+         <label><span>email</span> </label>
+         <input className="input-footer border1" type="email" name="email"  id={i} placeholder="johndoe@mail.com"/>
+                  
        </div>       
        ))}
        </>
@@ -121,21 +120,21 @@ function fullfillReservation(e){
     </form>
 ) : false}
 
-    { tickets.vip ?(<form ref={formVip}> 
+    { tickets.vip ?(<form ref={formVip} className="checkout"> 
     <span>VIP</span>     
      {[...Array(parseInt(tickets.vip))].map((i)=>(
-      <div key={i++}>
-      <label> <span>Fullname</span> 
-      <input  type="text" name="fullname"   id={i} placeholder="John Doe" />
-      </label>
-            <label><span>email</span> 
-      <input  type="email" name="email"  id={i} placeholder="johndoe@mail.com" />
-      </label>
+      <div key={i++} className="dynamic-inputs">
+      <label> <span>Fullname</span>  </label>
+      <input  className="input-footer border1" type="text" name="fullname"   id={i} placeholder="John Doe" />
+     
+      <label><span>email</span> </label>
+      <input  className="input-footer border1" type="email" name="email"  id={i} placeholder="johndoe@mail.com" />
+      
      </div>     
 ))}  
 </form>) :false}
 
-<button name="button" onClick={fullfillReservation}>Continue to Payment</button> 
+<button className='button-footer border2 accent1' name="button" onClick={fullfillReservation}>Continue to Payment</button> 
 
 {showPayment && <PaymentInf/>}
     </>

@@ -394,9 +394,9 @@ p {
 .input-footer,
 .button-footer {
   padding: 0.8rem 1rem;
-  width: 100%;
   background-color: transparent;
   text-align: center;
+  width: 100%;
 }
 
 /* --------------- // Bands Pages // ----------------------- */
@@ -437,20 +437,16 @@ form {
   gap: 1rem;
 }
 
-label {
-  font-size: medium;
-  border-radius: 7px;
-}
-
 .inputTickets {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
 .inputTickets label {
-  padding: 2rem;
+  padding: 1rem;
   color: var(--color-neutral1);
+  flex: 1 1 10rem;
 }
 .inputTickets label:first-child {
   background-color: var(--color-accent4);
@@ -460,15 +456,36 @@ label {
 }
 
 .inputTickets input {
-  color: var(--color-accent7);
-  font-size: medium;
+  color: var(--color-neutral1);
+  font-size: 1.5rem;
   padding: 0.5rem;
+  width: 60px;
+  border: none;
 }
 
 output {
   margin-left: 0.8rem;
 }
+label {
+  font-size: medium;
+  border-radius: 7px;
+}
 
+/* ---- // tents // ------- */
+
+.tents {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tents input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 60px;
+  border-radius: 15px;
+  background-color: transparent;
+}
 /* ---------- // Basket // --------------------- */
 .basket-container {
   margin: 1rem auto;
@@ -491,6 +508,25 @@ output {
   left: 2px;
 }
 
+td,
+th {
+  padding: 1rem;
+}
+
+.checkout {
+  margin: 1.5rem;
+}
+
+.checkout-title {
+  margin-top: 5rem;
+}
+
+.dynamic-inputs {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem;
+}
 /* small tablet styles */
 @media screen and (min-width: 620px) {
   .title {
@@ -572,14 +608,6 @@ output {
   .bandPageHero li {
     font-size: 1.2rem;
   }
-
-  .inputTickets {
-    flex-direction: row;
-  }
-
-  .inputTickets label {
-    padding: 1rem 0.7rem;
-  }
 }
 /* large tablets and laptop styles */
 @media screen and (min-width: 960px) {
@@ -601,10 +629,6 @@ output {
 
   .footer .container {
     align-items: baseline;
-  }
-
-  .inputTickets label {
-    padding: 2rem;
   }
 }
 

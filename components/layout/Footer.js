@@ -53,7 +53,7 @@ infoForm.current.elements.email.value=""
                     <input required className="input-footer border2" name="name"  placeholder="John Doe"/>
 
                     <input required type="email" className="input-footer border2" name="email"  placeholder="johndoe@mail.com"/>
-                    <button className="button-footer accent2 border2">SUBMIT</button>
+                    <button className="button-footer accent1 border2">SUBMIT</button>
                 </form>
             </div>
             <div className="container">
