@@ -12,6 +12,7 @@ export default function CheckoutForm({id}) {
         const {tickets, checked}= useContext(AppContext);
 
         const [showPayment, setShowPayment]=useState(false)
+     
 
         const formReg=useRef();
         const formVip=useRef();
@@ -20,6 +21,8 @@ export default function CheckoutForm({id}) {
 function fullfillReservation(e){
     
         e.preventDefault()
+
+        
           const options = {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -86,6 +89,9 @@ function fullfillReservation(e){
             .then(response => console.log(response))
             .catch(err => console.error(err));
         
+          
+
+
         setShowPayment(true)
         }
       
@@ -103,8 +109,9 @@ function fullfillReservation(e){
          <div key={i++}>
          <label> <span>Fullname</span> 
          <input  type="text" name="fullname"  id={i} placeholder="John Doe"/>
+       
          </label>
-         <label><span>emain</span> 
+         <label><span>email</span> 
          <input  type="email" name="email"  id={i} placeholder="johndoe@mail.com"/>
                   </label>
        </div>       
@@ -119,9 +126,9 @@ function fullfillReservation(e){
      {[...Array(parseInt(tickets.vip))].map((i)=>(
       <div key={i++}>
       <label> <span>Fullname</span> 
-      <input  type="text" name="fullname"  id={i} placeholder="John Doe" />
+      <input  type="text" name="fullname"   id={i} placeholder="John Doe" />
       </label>
-      <label><span>email</span> 
+            <label><span>email</span> 
       <input  type="email" name="email"  id={i} placeholder="johndoe@mail.com" />
       </label>
      </div>     
