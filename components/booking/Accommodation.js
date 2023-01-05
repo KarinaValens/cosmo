@@ -67,7 +67,7 @@ export default function Accommodation({spots}) {
         </label>           
         
     </div>
-    <label className="card acomodation">Green Camping: 
+    <label className="card acomodation green-camping">Green Camping: 
         <input onChange={handleChange} 
         onClick={()=>{setChecket(!checked)}}
         name="greenCamping" 

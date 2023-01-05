@@ -5,8 +5,8 @@ export default function Nav() {
     <>
     <nav className="nav">
         <ul>
-            <Anchor href={"/"}>Home</Anchor>
-            <Anchor href={"/schedule"}>Schedule</Anchor>
+            <Anchor className="anchor" href={"/"}>HOME</Anchor>
+            <Anchor className="anchor" href={"/schedule"}>SCHEDULE</Anchor>
         </ul>
     </nav>   
     

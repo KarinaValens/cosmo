@@ -19,7 +19,7 @@ export default function Tickets() {
         type="number" 
         min= {tickets.vip <= 0 ? 1 : 0}
         max="10" 
-        maxLength={3}
+        maxLength={3} 
         placeholder="0"/>
         <span> x ${regularPrice}</span>
         <output>

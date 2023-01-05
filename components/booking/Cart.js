@@ -12,7 +12,7 @@ export default function Cart() {
     /* onClick={()=>setShow(!show)}= make the show function a toogle to open and close te basket on click */
   return (
           
-        <button onClick={()=>setShow(!show)} style={{"backgroundColor": "transparent", "border":"none" }}>
+        <button className="button-cart" onClick={()=>setShow(!show)} >
              <Image  src={cart_shopping_solid} alt={""} width={"37"} height={"37"}  priority sizes="(max-width: 700px) 100vw, 700px" />
              <span className="quantity">{parseInt(totalTickets) >= 0 ? parseInt(totalTickets): 0}</span>
         </button>

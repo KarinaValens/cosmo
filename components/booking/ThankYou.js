@@ -1,40 +1,12 @@
-import { useContext, useState} from "react";
-import { AppContext } from "../context/AppContext";
-import CheckoutForm from "./CheckoutForm";
+import {useContext} from 'react'
+import { AppContext } from '../context/AppContext';
 
 
-const url="localhost:8080/"
-//const url= "rough-snowflake-4981.fly.dev/"
 
-export default function Basket() {
+export default  function ThankYou() {
+
+    const {tickets, checked, regularPrice, vipPrice, tents2perPrice, tents3perPrice, greenPrice}=useContext(AppContext)
     
-    
- const {tickets, totalTickets,  checked, regularPrice, vipPrice, tents2perPrice, tents3perPrice, greenPrice}=useContext(AppContext)
- 
- const payload={"area": tickets.accommodation.toString(), "amount":parseInt(totalTickets)}
-
-const [id, setId]=useState();
-const [showForm, setShowForm]=useState(false)
-
- function book() {
-
-    const options = {
-        method: 'PUT',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(payload)
-      };
-
-
-    fetch(`http://${url}reserve-spot`, options)
-      .then((res) => res.json())
-      .then((res) => setId(res.id))
-      .catch((err) => console.error(err));
-
-    //show the ticket horlders and payment form
-    setShowForm(true)
-
-     } 
-
     const regular=tickets.regular * regularPrice;
     const vip=tickets.vip * vipPrice;
     const tents2per=tickets.tents2per * tents2perPrice;
@@ -44,16 +16,15 @@ const [showForm, setShowForm]=useState(false)
     const bookingFee= 99;
     const total= subtotal + bookingFee;
 
-return (
-        <>
-        
-     {showForm ? <CheckoutForm id={id}/> : <>
-            <table>
+  return (
+    <>
+    <h2>Thank You For Your Purchage</h2>
+    <h3>Order Summary</h3>
+    <table>
                 <thead>
                     <tr>
                     <th>Detail</th>
                     <th>Quantity</th>
-                    <th>Price</th>
                     <th>Total</th>
                     </tr>
                 </thead>              
@@ -62,7 +33,6 @@ return (
                     {tickets.regular != 0 ? <tr>
                 <td>Regular tickets: </td>
                 <td>{tickets.regular}</td> 
-                <td>$ {regularPrice}</td> 
                 <td>$ {regular}</td> 
                 </tr>:false}
                 
@@ -70,7 +40,6 @@ return (
                 <tr>
                 <td>VIP tickets:</td>
                 <td>{tickets.vip}</td>
-                <td>$ {vipPrice}</td>
                 <td>$ {vip}</td> 
                 </tr>:false}
 
@@ -79,7 +48,6 @@ return (
                 <tr>
                 <td>2 person tent:</td>
                 <td>{tickets.tents2per}</td>
-                <td>$ {tents2perPrice}</td>
                 <td>$ {tents2per}</td>
                 </tr>:false}
                 
@@ -87,7 +55,6 @@ return (
                 <tr>
                 <td>3 person tent:</td>
                 <td>{tickets.tents3per}</td>
-                <td>$ {tents3perPrice}</td>
                 <td>$ {tents3per}</td>
                 </tr>:false}
 
@@ -95,7 +62,6 @@ return (
                 <tr>    
                 <td>Green Camping:</td>
                 <td>{tickets.greenCamping}</td>
-                <td>$ {greenPrice}</td> 
                 <td>$ {greenCamping}</td> 
                 </tr>:false}
 
@@ -122,10 +88,8 @@ return (
                 </tbody>                
                                        
             </table>
-            <button className='accion-button border2 accent1' onClick={book}>CONFIRM RESERVATION</button>
-            </>}  
+    
     </>
   )
 }
-
 

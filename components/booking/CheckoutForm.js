@@ -12,7 +12,6 @@ export default function CheckoutForm({id}) {
         const {tickets, checked}= useContext(AppContext);
 
         const [showPayment, setShowPayment]=useState(false)
-     
 
         const formReg=useRef();
         const formVip=useRef();
@@ -85,17 +84,15 @@ function fullfillReservation(e){
               }
           
         fetch ("https://uyupfhdfzpeutsnwwvra.supabase.co/rest/v1/booking_info", options2)    
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
-        
-          
-
-
-        setShowPayment(true)
+            .then(res => res.json())
+            .catch(err => console.error(err)); 
+     
+          setShowPayment(true)
         }
       
   return (
+    <>
+    {showPayment ? <PaymentInf/> : 
     <>
     <h3 className='checkout-title'>Ticket Holder Info</h3>    
     {tickets.regular ? (    <form className='checkout' ref={formReg}>
@@ -106,13 +103,12 @@ function fullfillReservation(e){
  */}
          {[...Array(parseInt(tickets.regular))].map((i)=>(
          <div key={i++} className="dynamic-inputs">
-         <label> <span>Fullname</span> </label>
-         <input className="input-footer border1" type="text" name="fullname"  id={i} placeholder="John Doe"/>
-       
-         
-         <label><span>email</span> </label>
-         <input className="input-footer border1" type="email" name="email"  id={i} placeholder="johndoe@mail.com"/>
-                  
+         <label> <span className='input-name'>Fullname</span> 
+         <input className="checkout-inputs border1" type="text" name="fullname"  id={i} placeholder="John Doe" autoFocus/>    
+         </label>
+         <label> <span className='input-name'>email</span> 
+         <input className="checkout-inputs border1" type="email" name="email"  id={i} placeholder="johndoe@mail.com"/>
+         </label>        
        </div>       
        ))}
        </>
@@ -124,21 +120,20 @@ function fullfillReservation(e){
     <span>VIP</span>     
      {[...Array(parseInt(tickets.vip))].map((i)=>(
       <div key={i++} className="dynamic-inputs">
-      <label> <span>Fullname</span>  </label>
-      <input  className="input-footer border1" type="text" name="fullname"   id={i} placeholder="John Doe" />
-     
-      <label><span>email</span> </label>
-      <input  className="input-footer border1" type="email" name="email"  id={i} placeholder="johndoe@mail.com" />
-      
+      <label> <span className='input-name'>Fullname</span>  
+      <input  className="checkout-inputs border1" type="text" name="fullname"   id={i} placeholder="John Doe" autoFocus/>
+      </label>
+      <label> <span className='input-name'>email</span> 
+      <input  className="checkout-inputs border1" type="email" name="email"  id={i} placeholder="johndoe@mail.com" />
+      </label>
      </div>     
 ))}  
 </form>) :false}
 
-<button className='button-footer border2 accent1' name="button" onClick={fullfillReservation}>Continue to Payment</button> 
-
-{showPayment && <PaymentInf/>}
+<button className='accion-button border2 accent1' name="button" onClick={fullfillReservation}>CONTINUE TO PAYMENT</button> 
+</>
+}
     </>
-
   )
 }
 

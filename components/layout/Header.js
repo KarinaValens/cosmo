@@ -15,13 +15,15 @@ export default function Header() {
   return (
     <header>
      
-      <Nav/>
       
       <div className="basket-container">
         <Anchor  href={"/"} >
           <Image  src={dark_theme_logo} alt={""} width={"50"} height={"45"} priority sizes="(max-width: 700px) 100vw, 700px" />
         </Anchor>
-        < Cart/>      
+          <div>
+             <Nav/>
+             < Cart/>      
+          </div>
       </div>
 
 
