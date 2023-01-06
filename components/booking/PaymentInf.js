@@ -23,11 +23,11 @@ function PaymentInf() {
     <form ref={payment} className="payment-form">
 
   
-  <label>Firstname<input className="checkout-inputs border2" type="text" required  placeholder="Firstname" name="name" id="card-name" autoFocus/></label>
-  <label> Lastname<input className="checkout-inputs border2" type="text" required  placeholder="Lastname" name="name" id="card-lastname"/></label>
+  <label>Firstname<input className="dynamic-inputs border2" type="text" required  placeholder="Firstname" name="name" id="card-name" autoFocus/></label>
+  <label> Lastname<input className="dynamic-inputs border2" type="text" required  placeholder="Lastname" name="name" id="card-lastname"/></label>
      
   
-  <label>Card Num<input className="checkout-inputs border2" type="text" required maxLength="16"  placeholder="1234 5678 9012 3456" name="card_num" id="card-number"/>  </label>
+  <label>Card Num<input className="dynamic-inputs border2" type="text" required maxLength="16"  placeholder="1234 5678 9012 3456" name="card_num" id="card-number"/>  </label>
   
     
   <div>  
@@ -37,7 +37,7 @@ function PaymentInf() {
   
   </div>
 
-    <button className="checkout-inputs accent1 border2" type='submit' onClick={handlePayment}>CONFIRM PAYMENT</button>   
+    <button className="accion-button accent1 border2" type='submit' onClick={handlePayment}>CONFIRM PAYMENT</button>   
     </form>
     </>
    }

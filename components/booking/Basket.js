@@ -45,7 +45,7 @@ const [showForm, setShowForm]=useState(false)
 return (
         <>
         
-     {showForm ? <CheckoutForm id={id}/> : <>
+     {showForm ? <CheckoutForm id={id}/> : <div className="table-container">
             <table>
                 <thead>
                     <tr>
@@ -121,7 +121,7 @@ return (
                                        
             </table>
             <button className='accion-button border2 accent1' onClick={book}>CONFIRM RESERVATION</button>
-            </>}  
+            </div>}  
     </>
   )
 }

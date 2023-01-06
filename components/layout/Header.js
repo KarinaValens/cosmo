@@ -4,7 +4,6 @@ import dark_theme_logo from "../../public/media/dark_theme_logo.png" // it is ne
 import Anchor from "./Anchor"
 import Cart from "../booking/Cart"
  import Nav from "./Nav"
-import Basket from "../booking/Basket";
 
 
 //the images are place in the public folder inside media
@@ -13,8 +12,7 @@ export default function Header() {
     //it is not necesary to write an unit in the the width and the heigh properties 
 
   return (
-    <header>
-     
+    <header>  
       
       <div className="basket-container">
         <Anchor  href={"/"} >

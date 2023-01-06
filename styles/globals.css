@@ -462,13 +462,14 @@ p {
   z-index: 4;
   color: var(--color-accent7);
   font-weight: bolder;
-  font-size: 1.5rem;
+  top: -16px;
+  font-size: 1.7rem;
   font-family: var(--font-headings);
 }
 
 /* ------------- // Form Tickets // -------------- */
 
-form {
+.reservation-form {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -476,26 +477,34 @@ form {
   gap: 1rem;
 }
 
-.inputTickets {
+.tickets-div {
+  width: 80%;
+  text-align: center;
+}
+
+.tickets-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
 }
 
-.inputTickets label {
+.tickets-container label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   padding: 1rem 0.8rem;
   color: var(--color-neutral1);
   flex: 1 1 16rem;
 }
 
-.inputTickets label:first-child {
+.tickets-container label:first-child {
   background-color: var(--color-accent4);
 }
-.inputTickets label:last-child {
+.tickets-container label:last-child {
   background-color: var(--color-accent5);
 }
 
-.inputTickets input {
+.tickets-container input {
   color: var(--color-neutral1);
   font-size: 0.9rem;
   padding: 0.5rem;
@@ -503,6 +512,9 @@ form {
   border-radius: 10px;
 }
 
+.ticket-holder-container .accion-button {
+  width: 100%;
+}
 output {
   margin-left: 0.8rem;
 }
@@ -547,6 +559,13 @@ label {
   flex: 1 1 100px;
 }
 
+.table-container {
+  width: fit-content;
+  margin: auto;
+}
+.table-container .accion-button {
+  width: 100%;
+}
 table {
   margin: 2rem auto;
   font: 200 0.7rem/1 auto;
@@ -567,17 +586,15 @@ th {
 .accion-button {
   width: 80%;
   font-size: 0.7rem;
+  margin-top: 1rem;
 }
 /* ---------- // Checkout // ---------- */
-.checkout {
-  margin: 1.5rem;
-}
 
 .checkout-title {
   margin-top: 5rem;
 }
 
-.dynamic-inputs {
+.dynamic-inputs-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -588,29 +605,41 @@ th {
 .checkout label {
   flex: 1 1 16px;
   text-align: baseline;
+  margin-bottom: 2rem;
 }
 
-.checkout-inputs {
+.dynamic-inputs {
   padding: 0.8rem 1rem;
   background-color: transparent;
   text-align: center;
+}
+.input-name {
+  margin-right: 10px;
+}
+/* ---------- // Payment // ---------- */
+.payment-form {
+  display: flex;
   width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
-/* ---------- // Payment // ---------- */
-
 .payment-form label {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .payment-form div {
   display: flex;
   flex-wrap: wrap;
+  width: 80%;
 }
+
 .payment-form div label {
   flex: 1 1 150px;
 }
@@ -703,9 +732,14 @@ th {
     font-size: 1.2rem;
   }
 
-  .inputTickets input {
+  .tickets-container input {
     font-size: 1.2rem;
     width: 70px;
+  }
+
+  .tents label {
+    display: flex;
+    gap: 1rem;
   }
 
   table {
@@ -750,13 +784,24 @@ th {
   .footer .container {
     align-items: baseline;
   }
+
+  .tents {
+    flex-direction: row;
+  }
   .accion-button {
     width: 60%;
+  }
+  .ticket-holder-container {
+    width: 80%;
   }
 }
 
 /* destop styles */
 @media screen and (min-width: 1200px) {
+  .tickets-container label {
+    padding: 2rem 0.8rem;
+    flex: 1 1 18rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

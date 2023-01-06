@@ -31,11 +31,11 @@ const {show,  addToCart} = useContext(AppContext);
         
         <Basket/> :  
         
-        <form>
+        <form className='reservation-form'>
             <Tickets />
             <Accommodation spots={spots}/>
             <Tents />
-            <button className='button-footer accent1 border2' onClick={addToCart}>ADD TO BASKET</button>        
+            <button className='accion-button accent1 border2' onClick={addToCart}>ADD TO BASKET</button>        
         </form> }
       
     </div>

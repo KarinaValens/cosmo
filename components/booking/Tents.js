@@ -22,8 +22,7 @@ function Tents() {
             
             <output>
             = $ {tent2Amount}
-            </output>
-            
+            </output>            
         </label>
     
 

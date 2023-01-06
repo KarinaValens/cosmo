@@ -8,10 +8,9 @@ export default function Tickets() {
   const {handleChange, totalTickets, tickets, regularAmount, vipAmount, regularPrice, vipPrice}=useContext(AppContext)
   
   return (
-    <div >
+    <div className="tickets-div">
           <h3>Tickets:</h3>
-          <div className="inputTickets">
-
+    <div className="tickets-container">
     <label>
     <span>Regular : </span>
         <input className="input" onChange={handleChange} 
