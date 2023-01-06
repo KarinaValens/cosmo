@@ -26,7 +26,7 @@ function fullfillReservation(e){
             body: JSON.stringify({id: id})
           };
 
-          fetch(`http://${url}fullfill-reservation`, options)
+          fetch(`http${url}fullfill-reservation`, options)
           .then((res) => res.json())
           .then((res) => console.log(res))
           .catch((err) => console.error(err));
