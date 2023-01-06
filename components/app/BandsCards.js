@@ -13,9 +13,7 @@ export default function BandsCards ({bands}) {
     const {name} = router.query
     const band = bands.find(band => band.name === name) */
     // I need to print the correct date and time of the band paying
-    
-/*  const {url}=useContext(AppContext)
- */
+let i=0;
     const [index, setIndex]=useState(0);
    
     return (
@@ -26,7 +24,7 @@ export default function BandsCards ({bands}) {
 
       <div className='bands-wraper' style={{transform:`translateX(-${index * 50}%)`}}>
 
-        <div className='bands-card'  >
+        <div className='bands-card'>
           {bands.map((band) => (
             <div key={`${Math.random()} + ${Date.now()}`} className="single-card">  
 
@@ -34,7 +32,8 @@ export default function BandsCards ({bands}) {
         
             <div className='bandsInfo'>
             <div>
-            <p className='accent1'>{band.name}</p>
+              {band.index}
+            <p className='accent1'>{band.name} #{i++}</p>
             <p className='accent1'>{band.genre}</p>            
             <Link  href={`bands/${band.name}`} className='button accent1 border1 bandlink'>LEARN MORE
             </Link>
