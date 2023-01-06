@@ -8,8 +8,8 @@ import{useRouter} from "next/router"
 
 
 
-//const url="localhost:8080/"
-const url= "rough-snowflake-4981.fly.dev/"
+const url="localhost:8080/"
+//const url= "rough-snowflake-4981.fly.dev/"
 
 export default function Band ({bands}) {
 
@@ -22,7 +22,7 @@ export default function Band ({bands}) {
     return (
     <> 
     <div className="bandpage"> 
-          <div className="bandPageHero" style={{ backgroundImage: `url(${band.logo.includes("https://") ? band.logo : url + `logos/` + band.logo})`, backgroundColor:"hsla(0, 0%, 0%, 0.7)", backgroundBlendMode:'multiply', backgroundPosition:`center` }}> 
+          <div className="bandPageHero" style={{ backgroundImage: `url(${band.logo.includes("https://") ? band.logo : `http://` + url + `logos/` + band.logo})`, backgroundColor:"hsla(0, 0%, 0%, 0.7)", backgroundBlendMode:'multiply', backgroundPosition:`center` }}> 
 
               <h1 className="bandPageTitle accent1">{band.name}</h1>
            
