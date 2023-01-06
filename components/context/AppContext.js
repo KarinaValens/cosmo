@@ -6,6 +6,9 @@ export const AppContext = createContext();//creates the context to use in the co
 
 export function AppContextProvider(props){
 
+    //const url="localhost:8080/"
+      const url= "rough-snowflake-4981.fly.dev/"
+
     //this function is the wrapper for the -aap.js page to pass all the props
     const regularPrice= 799
     const vipPrice = 1299
@@ -83,7 +86,7 @@ const addToCart = (e) =>{
 const [show, setShow]=useState(false);
 
 const value={
-    tickets, setTickets, totalTickets, 
+    url,tickets, setTickets, totalTickets, 
     regularPrice,  vipPrice,  tents2perPrice, tents3perPrice, greenPrice, 
     regularAmount, vipAmount, 
     cart, setCart, show, setShow,

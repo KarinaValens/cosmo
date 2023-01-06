@@ -3,13 +3,11 @@ import { AppContext } from "../context/AppContext";
 import CheckoutForm from "./CheckoutForm";
 
 
-const url="localhost:8080/"
-//const url= "rough-snowflake-4981.fly.dev/"
 
 export default function Basket() {
     
     
- const {tickets, totalTickets,  checked, regularPrice, vipPrice, tents2perPrice, tents3perPrice, greenPrice}=useContext(AppContext)
+ const {url, tickets, totalTickets,  checked, regularPrice, vipPrice, tents2perPrice, tents3perPrice, greenPrice}=useContext(AppContext)
  
  const payload={"area": tickets.accommodation.toString(), "amount":parseInt(totalTickets)}
 
@@ -28,13 +26,13 @@ const [showForm, setShowForm]=useState(false)
     fetch(`http://${url}reserve-spot`, options)
       .then((res) => res.json())
       .then((res) => setId(res.id))
-      .catch((err) => console.error(err));
+/*       .then((res) => console.log(res))
+ */      .catch((err) => console.error(err));
 
     //show the ticket horlders and payment form
     setShowForm(true)
 
      } 
-
     const regular=tickets.regular * regularPrice;
     const vip=tickets.vip * vipPrice;
     const tents2per=tickets.tents2per * tents2perPrice;

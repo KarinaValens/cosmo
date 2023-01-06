@@ -1,18 +1,17 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Image from 'next/image';
+import { AppContext } from '../context/AppContext';
 
 export default function BandsCards ({bands}) {
    /*  const router = useRouter();
     const {name} = router.query
     const band = bands.find(band => band.name === name) */
     // I need to print the correct date and time of the band paying
+ const {url}=useContext(AppContext)
 
     const [index, setIndex]=useState(0);
-    const url= "http://localhost:8080/"
-    //const url="https://rough-snowflake-4981.fly.dev/"
-
-
+   
     return (
      
     <div className='carousel'>
@@ -24,7 +23,7 @@ export default function BandsCards ({bands}) {
         <div className='bands-card'  >
           {bands.map((band) => (
             <div key={`${Math.random()} + ${Date.now()}`} className="single-card">          
-            <Image src={`${band.logo.includes("https://") ? band.logo : url + "/logos/" + band.logo}`}   alt={band.name} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
+            <Image src={`${band.logo.includes("https://") ? band.logo : `https://${url}` + "/logos/" + band.logo}`}   alt={band.name} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
         
             <div className='bandsInfo'>
             <div>

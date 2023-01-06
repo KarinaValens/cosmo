@@ -583,34 +583,44 @@ th {
   gap: 1rem;
   align-items: center;
   margin: 1rem;
-  justify-content: space-around;
+}
+
+.checkout label {
+  flex: 1 1 16px;
+  text-align: baseline;
 }
 
 .checkout-inputs {
   padding: 0.8rem 1rem;
   background-color: transparent;
   text-align: center;
-  flex: 1 1 16px;
-}
-.input-name {
-  margin-right: 1rem;
+  width: 100%;
 }
 
 /* ---------- // Payment // ---------- */
 
-.payment-form {
-  width: 60%;
-  margin: auto;
+.payment-form label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-evenly;
 }
+
 .payment-form div {
+  display: flex;
   flex-wrap: wrap;
 }
+.payment-form div label {
+  flex: 1 1 150px;
+}
 .payment-inputs {
+  width: 48%;
+  margin: auto 1rem;
   padding: 0.8rem 1rem;
   background-color: transparent;
   text-align: center;
 }
-
 /* small tablet styles */
 @media screen and (min-width: 620px) {
   .title {
@@ -709,6 +719,14 @@ th {
 
   .accion-button {
     font: 200 1rem/1 auto;
+  }
+
+  .payment-form {
+    width: 55%;
+  }
+
+  .checkout-inputs {
+    width: 65%;
   }
 }
 /* large tablets and laptop styles */

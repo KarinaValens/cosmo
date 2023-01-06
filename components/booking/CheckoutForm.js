@@ -3,13 +3,11 @@ import { AppContext } from '../context/AppContext';
 import PaymentInf from './PaymentInf';
 
 
-const url="localhost:8080/"
-//const url= "rough-snowflake-4981.fly.dev/"
-
 
 export default function CheckoutForm({id}) {
+/* console.log(id) */
 
-        const {tickets, checked}= useContext(AppContext);
+        const {tickets, checked, url}= useContext(AppContext);
 
         const [showPayment, setShowPayment]=useState(false)
 
@@ -30,6 +28,7 @@ function fullfillReservation(e){
 
           fetch(`http://${url}fullfill-reservation`, options)
           .then((res) => res.json())
+          .then((res) => console.log(res))
           .catch((err) => console.error(err));
 
           /*  Making the second request POST to supabase */
@@ -85,6 +84,7 @@ function fullfillReservation(e){
           
         fetch ("https://uyupfhdfzpeutsnwwvra.supabase.co/rest/v1/booking_info", options2)    
             .then(res => res.json())
+            .then(res => console.log(res))
             .catch(err => console.error(err)); 
      
           setShowPayment(true)
@@ -120,7 +120,7 @@ function fullfillReservation(e){
     <span>VIP</span>     
      {[...Array(parseInt(tickets.vip))].map((i)=>(
       <div key={i++} className="dynamic-inputs">
-      <label> <span className='input-name'>Fullname</span>  
+      <label><span className='input-name'>Fullname</span>  
       <input  className="checkout-inputs border1" type="text" name="fullname"   id={i} placeholder="John Doe" autoFocus/>
       </label>
       <label> <span className='input-name'>email</span> 

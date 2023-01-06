@@ -3,15 +3,16 @@ import dark_theme_logo from "/public/media/dark_theme_logo.png"
 import instagram from "/public/media/instagram.png" 
 import facebook from "/public/media/facebook.png" 
 import youtube from "/public/media/youtube.png" 
-
 import{useRouter} from "next/router"
 
 
 
-const url="localhost:8080/"
-  //const url= "rough-snowflake-4981.fly.dev/"
+
+//const url="localhost:8080/"
+const url= "rough-snowflake-4981.fly.dev/"
 
 export default function Band ({bands}) {
+
 
     const router = useRouter();
     const {name} = router.query
