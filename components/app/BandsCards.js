@@ -13,15 +13,15 @@ export default function BandsCards ({bands}) {
     const {name} = router.query
     const band = bands.find(band => band.name === name) */
     // I need to print the correct date and time of the band paying
-let i=0;
+    let i=1;
     const [index, setIndex]=useState(0);
    
     return (
      
     <div className='carousel'>
-         <button className='button bandbutton prev accent2 border2' onClick={()=>setIndex(count=> count - 1)}>prev</button>
-         <button className='button bandbutton next accent2 border2' onClick={()=>setIndex(count=> count + 1)}>next</button>
-
+         <button className='bandbutton prev border0' onClick={()=>setIndex(count=> count - 1)}>prev</button>
+         <button className='bandbutton next border0' onClick={()=>setIndex(count=> count + 1)}>next</button>
+<div className='bands-container'>
       <div className='bands-wraper' style={{transform:`translateX(-${index * 50}%)`}}>
 
         <div className='bands-card'>
@@ -33,8 +33,8 @@ let i=0;
             <div className='bandsInfo'>
             <div>
               {band.index}
-            <p className='accent1'>{band.name} #{i++}</p>
-            <p className='accent1'>{band.genre}</p>            
+            <p className='accent1'>#{i++} {band.name} </p>
+            <p className='accent6'>{band.genre}</p>            
             <Link  href={`bands/${band.name}`} className='button accent1 border1 bandlink'>LEARN MORE
             </Link>
             </div>
@@ -54,7 +54,7 @@ let i=0;
         </div>
       </div>
     </div>
-    
+    </div> 
   )
 }
 
