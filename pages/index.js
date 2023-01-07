@@ -6,7 +6,6 @@ import Header from '../components/layout/Header'
 import Accommodation from '../components/booking/Accommodation';
 import Tickets from '../components/booking/Tickets';
 import Tents from '../components/booking/Tents';
-import Countdown from '../components/booking/CountDown';
 
 
 //const url="localhost:8080/"
