@@ -3,7 +3,7 @@ import { AppContext } from '../context/AppContext'
 
 
 
-export default function Countdown({seconds}) {
+export default function Countdown() {
 
 const {countdown, setCountdown} = useContext(AppContext)
 

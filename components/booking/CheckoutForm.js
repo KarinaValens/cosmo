@@ -1,6 +1,6 @@
 import {useRef, useContext, useState} from 'react'
 import { AppContext } from '../context/AppContext';
-import Countdown from './CountDown';
+import Countdown from './Countdown';
 import PaymentInf from './PaymentInf';
 
 

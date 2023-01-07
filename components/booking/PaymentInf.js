@@ -1,5 +1,5 @@
 import {useRef, useState}  from 'react'
-import Countdown from './CountDown';
+import Countdown from './Countdown';
 import ThankYou from './ThankYou';
 
 function PaymentInf() {
