@@ -1,4 +1,5 @@
 import {useRef, useState}  from 'react'
+import Countdown from './CountDown';
 import ThankYou from './ThankYou';
 
 function PaymentInf() {
@@ -19,6 +20,7 @@ function PaymentInf() {
     <>
     {showSummary ? <ThankYou/> :
     <>
+    <Countdown/>
     <h3>Payment Info</h3>
     <form ref={payment} className="payment-form">
 

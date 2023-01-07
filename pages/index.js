@@ -6,10 +6,11 @@ import Header from '../components/layout/Header'
 import Accommodation from '../components/booking/Accommodation';
 import Tickets from '../components/booking/Tickets';
 import Tents from '../components/booking/Tents';
+import Countdown from '../components/booking/CountDown';
 
 
-const url="localhost:8080/"
-//const url= "rough-snowflake-4981.fly.dev/"
+//const url="localhost:8080/"
+const url= "rough-snowflake-4981.fly.dev/"
 
 export default function Home({spots}) {
 

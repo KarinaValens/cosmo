@@ -11,6 +11,7 @@ export default function Tickets() {
     <div className="tickets-div">
           <h3>Tickets:</h3>
     <div className="tickets-container">
+
     <label>
     <span>Regular : </span>
         <input className="input" onChange={handleChange} 
@@ -25,16 +26,8 @@ export default function Tickets() {
           <span> = ${regularAmount}</span>
         </output>
     </label>
-<div>
-    <span>  If your are looking for the bigwig experience, our VIP ticket is for you! Enjoy extra services as VIP
-     
-     <ul>
-             <li>Exlucive VIP entrance & exit points</li>
-             <li>Area with unobstructed view close to the stages</li> 
-             <li>Reserved VIP zones and tables </li>
-             <li>Special Bar services. And much more</li>            
-             </ul>
-    </span>
+
+        
     <label>
     <span>VIP: </span>
    
@@ -51,7 +44,7 @@ export default function Tickets() {
         </output>
     </label> 
     </div>
-    </div>
+   
     <h4>Total Tickets: {totalTickets >= 0 ? totalTickets : " "}</h4>
 
 </div>

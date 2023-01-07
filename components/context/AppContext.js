@@ -6,8 +6,8 @@ export const AppContext = createContext();//creates the context to use in the co
 
 export function AppContextProvider(props){
 
-    const url="://localhost:8080/"
-    //const url= "s://rough-snowflake-4981.fly.dev/"
+    //const url="://localhost:8080/"
+    const url= "s://rough-snowflake-4981.fly.dev/"
 
     //this function is the wrapper for the -aap.js page to pass all the props
     const regularPrice= 799
@@ -71,9 +71,9 @@ useEffect(()=>{
 
 const checkbox=useRef();//to verify if the checkbox of the green camping in the accommodation component is checked
 const [checked, setChecket]=useState(false)
+
 /* -------- // Basket // -------- */
 const [cart, setCart]=useState([]);
-
 
 const addToCart = (e) =>{  
     e.preventDefault();
@@ -83,7 +83,14 @@ const addToCart = (e) =>{
 
 
 /* ---- // cart // ------ */
+
 const [show, setShow]=useState(false);
+
+/* ----- // count down // ------ */
+
+const seconds = 300
+const [countdown, setCountdown]= useState(seconds) 
+
 
 const value={
     url,tickets, setTickets, totalTickets, 
@@ -92,7 +99,7 @@ const value={
     cart, setCart, show, setShow,
     handleChange, addToCart, 
     checkbox, checked, setChecket,
-    tent2Amount, tent3Amount}
+    tent2Amount, tent3Amount, countdown, setCountdown}
 
     return(
         <AppContext.Provider value={value}>

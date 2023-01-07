@@ -1,5 +1,6 @@
 import {useRef, useContext, useState} from 'react'
 import { AppContext } from '../context/AppContext';
+import Countdown from './CountDown';
 import PaymentInf from './PaymentInf';
 
 
@@ -93,7 +94,11 @@ function fullfillReservation(e){
   return (
     <>
     {showPayment ? <PaymentInf/> : 
+    
+
     <div className='ticket-holder-container'>
+          <Countdown />
+
     <h3 className='checkout-title'>Ticket Holder Info</h3>    
     {tickets.regular ? (    <form className='checkout' ref={formReg}>
       <>
@@ -132,6 +137,8 @@ function fullfillReservation(e){
 
 <button className='accion-button border2 accent1' name="button" onClick={fullfillReservation}>CONTINUE TO PAYMENT</button> 
 </div>
+
+
 }
     </>
   )

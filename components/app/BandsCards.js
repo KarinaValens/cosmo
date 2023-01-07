@@ -4,8 +4,8 @@ import Image from 'next/image';
 /* import { AppContext } from '../context/AppContext';
  */
 
-const url="localhost:8080/"
-//const url= "rough-snowflake-4981.fly.dev/"
+//const url="localhost:8080/"
+const url= "rough-snowflake-4981.fly.dev/"
 
 
 export default function BandsCards ({bands}) {
@@ -28,7 +28,7 @@ export default function BandsCards ({bands}) {
           {bands.map((band) => (
             <div key={`${Math.random()} + ${Date.now()}`} className="single-card">  
 
-            <Image src={`${band.logo.includes("https://") ? band.logo : `http://` + url + `logos/` + band.logo}`}   alt={band.name} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
+            <Image src={`${band.logo.includes("https://") ? band.logo : `https://` + url + `logos/` + band.logo}`}   alt={band.name} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
         
             <div className='bandsInfo'>
             <div>
