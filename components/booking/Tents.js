@@ -7,7 +7,7 @@ function Tents() {
 
 
   return (
-    <>    
+    <div className="tents-container">    
     
       <h3>Help setting tents</h3>
     <div className="tents">
@@ -41,7 +41,7 @@ function Tents() {
             
     </label>
     </div>
-    </>
+    </div>
 
   )
 }

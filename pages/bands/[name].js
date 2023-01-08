@@ -8,8 +8,8 @@ import{useRouter} from "next/router"
 
 
 
-const url="localhost:8080/"
-//const url= "rough-snowflake-4981.fly.dev/"
+const url="http://localhost:8080/"
+//const url= "https://rough-snowflake-4981.fly.dev/"
 
 export default function Band ({bands}) {
 
@@ -60,7 +60,7 @@ export default function Band ({bands}) {
 
 
 export async function getStaticPaths(){
-  const res = await fetch(`http://${url}bands#`);
+  const res = await fetch(`${url}bands#`);
   
   const dataBands = await res.json();
   const paths = dataBands.map(band =>{
@@ -84,7 +84,7 @@ export async function getStaticProps(){
   - once we have the data, it put into the component
   - so the component can render with that data inside it  */
 
- const res = await fetch(`http://${url}bands#`);
+ const res = await fetch(`${url}bands#`);
 
   const data = await res.json();
 

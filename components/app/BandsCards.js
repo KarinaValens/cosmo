@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import { useState, useContext } from 'react';
 import Image from 'next/image';
-/* import { AppContext } from '../context/AppContext';
- */
 
-const url="localhost:8080/"
-//const url= "rough-snowflake-4981.fly.dev/"
+
+const url="http://localhost:8080/"
+//const url= "https://rough-snowflake-4981.fly.dev/"
 
 
 export default function BandsCards ({bands}) {
@@ -22,13 +21,13 @@ export default function BandsCards ({bands}) {
          <button className='bandbutton prev border0' onClick={()=>setIndex(count=> count - 1)}>prev</button>
          <button className='bandbutton next border0' onClick={()=>setIndex(count=> count + 1)}>next</button>
 <div className='bands-container'>
-      <div className='bands-wraper' style={{transform:`translateX(-${index * 50}%)`}}>
+      <div className='bands-wraper' style={{transform:`translateX(-${index * 100}%)`}}>
 
         <div className='bands-card'>
           {bands.map((band) => (
             <div key={`${Math.random()} + ${Date.now()}`} className="single-card">  
 
-            <Image src={`${band.logo.includes("https://") ? band.logo : `https://` + url + `logos/` + band.logo}`}   alt={band.name} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
+            <Image src={`${band.logo.includes("https://") ? band.logo :  url + `logos/` + band.logo}`}   alt={band.name} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
         
             <div className='bandsInfo'>
             <div>

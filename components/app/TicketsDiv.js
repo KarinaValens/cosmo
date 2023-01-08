@@ -5,7 +5,6 @@ export default function TicketsDiv() {
   return (
     <>
     <div className='flex-container '>
-
         <div className='tickets-div'>
             <p className='regular'>Regular Pass</p>
             <p className='vip'>VIP Pass</p>

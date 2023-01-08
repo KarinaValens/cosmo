@@ -499,6 +499,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  margin: 4rem auto;
 }
 
 .tickets-container div {
@@ -546,6 +547,14 @@ label {
 }
 
 /* ---- // tents // ------- */
+
+.tents-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem auto;
+}
 
 .tents {
   display: flex;

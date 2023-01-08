@@ -15,8 +15,8 @@ import Basket from '../../components/booking/Basket'
 import { useContext} from "react";
 import { AppContext } from '../../components/context/AppContext' 
 
-const url="localhost:8080/"
-//const url= "rough-snowflake-4981.fly.dev/"
+const url="http://localhost:8080/"
+//const url= "https://rough-snowflake-4981.fly.dev/"
 
 
 export default function Schedule({schedule, bands}) {
@@ -39,9 +39,10 @@ export default function Schedule({schedule, bands}) {
     <div className="container">
      
 
-      {show ? <Basket/> : true}     
      
       <main className='main'>
+
+      {show ? <Basket/> : <>
         <Filtering setSearch={setSearch} setGenre={setGenre}/>
         <Days schedule={schedule} setFilter={setFilter}/> 
         <Midgard schedule={schedule} filter={filter} search={search} bands={bands} genre={genre}/>
@@ -53,7 +54,8 @@ export default function Schedule({schedule, bands}) {
         <Lineup bands={bands} schedule={schedule} filter={filter}/>
         <BandsCards bands={bands}/>
         <TicketsDiv/>
-                  
+        </> }     
+                 
       </main>
     </div>
     </>
@@ -66,9 +68,9 @@ export async function getServerSideProps(){
   
   
 const [scheduleRes, bandsRes] = await Promise.all([
-  fetch(`http://${url}schedule`),
+  fetch(`${url}schedule`),
 
-  fetch(`http://${url}bands#`)
+  fetch(`${url}bands#`)
 
 ]);
 const [schedule, bands]= await Promise.all([
