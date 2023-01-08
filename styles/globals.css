@@ -363,7 +363,6 @@ p {
 
 /* ------------ // Tickets // -------------- */
 
-/* .tickets-info, */
 .container {
   flex-direction: column;
 }
@@ -374,7 +373,7 @@ p {
 
 .tickets-div {
   flex: 1 1 200px;
-  width: 30%;
+  width: 35%;
 }
 .tickets-info {
   width: 50%;
