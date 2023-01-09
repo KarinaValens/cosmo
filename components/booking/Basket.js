@@ -15,7 +15,7 @@ const [id, setId]=useState();
 const [showForm, setShowForm]=useState(false)
 
  function book() {
-
+if(totalTickets>0){
     const options = {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
@@ -32,7 +32,9 @@ const [showForm, setShowForm]=useState(false)
     //show the ticket horlders and payment form
     setShowForm(true)
 
-     } 
+ 
+}
+    } 
     const regular=tickets.regular * regularPrice;
     const vip=tickets.vip * vipPrice;
     const tents2per=tickets.tents2per * tents2perPrice;
