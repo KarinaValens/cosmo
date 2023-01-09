@@ -126,7 +126,7 @@ function fullfillReservation(e){
      {[...Array(parseInt(tickets.vip))].map((i)=>(
       <div key={i++} className="dynamic-inputs-container">
       <label><span className='input-name'>Fullname</span>  
-      <input  className="dynamic-inputs border1" type="text" name="fullname"   id={i} placeholder="John Doe" autoFocus/>
+      <input  className="dynamic-inputs border1" type="text" name="fullname"   id={i} placeholder="John Doe"/>
       </label>
       <label> <span className='input-name'>email</span> 
       <input  className="dynamic-inputs border1" type="email" name="email"  id={i} placeholder="johndoe@mail.com" />

@@ -15,7 +15,7 @@ export default function Header() {
       
       <div className="basket-container">
         <Anchor  href={"/"} >
-          <Image  src={dark_theme_logo} alt={""} width={"auto"} height={"45"} priority sizes="(max-width: 700px) 100vw, 700px" />
+          <Image  src={dark_theme_logo} alt={""} width={"auto"} height={"40"} priority sizes="(max-width: 700px) 100vw, 700px" />
         </Anchor>
           <div>
              <Nav/>

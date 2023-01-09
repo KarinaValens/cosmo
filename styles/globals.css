@@ -504,30 +504,40 @@ p {
 }
 
 .tickets-container div {
-  display: flex;
-  flex-wrap: wrap;
-  flex: 1 1 16rem;
-}
-
-.tickets-container label {
   justify-content: space-around;
-  padding: 1rem 0.8rem;
-  color: var(--color-neutral1);
+  padding: 0.8rem;
+  border-radius: 10px;
 }
 
-.tickets-container label:first-child {
-  background-color: var(--color-accent4);
+.tickets-container div:first-child {
+  border: solid 1px var(--color-accent4);
+  flex: 1 1 10rem;
 }
-.tickets-container label:last-child {
-  background-color: var(--color-accent5);
+.tickets-container div:last-child {
+  border: solid 1px var(--color-accent5);
+  flex: 1 1 10rem;
+}
+
+.tickets-container ul {
+  background-color: var(--color-neutral1);
+  color: var(--color-accent1);
+  text-align: left;
+  border-radius: 5px;
+  padding: 0 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .tickets-container input {
-  color: var(--color-neutral1);
+  color: var(--color-accent1);
   font-size: 0.9rem;
   padding: 0.5rem;
   width: 60px;
   border-radius: 10px;
+}
+.tickets-container output {
+  color: var(--color-accent5);
+  font-weight: bolder;
 }
 
 .ticket-holder-container .accion-button {
@@ -809,6 +819,9 @@ th {
   .tents {
     flex-direction: row;
   }
+  .tickets-container ul {
+    margin-top: 2rem;
+  }
   .accion-button {
     width: 60%;
   }
@@ -819,7 +832,7 @@ th {
 
 /* destop styles */
 @media screen and (min-width: 1200px) {
-  .tickets-container label {
+  .tickets-container div {
     padding: 2rem 0.8rem;
     flex: 1 1 18rem;
   }
