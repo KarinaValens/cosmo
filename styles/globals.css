@@ -560,9 +560,12 @@ label {
   padding: 4rem;
 }
 
+.green-container h3 {
+  text-align: center;
+}
+
 .green-container ul {
   margin-top: 1rem;
-  max-width: 60%;
 }
 .green-camping {
   background-color: var(--color-accent3);
@@ -777,6 +780,9 @@ th {
   .tickets-container input {
     font-size: 1.2rem;
     width: 70px;
+  }
+  .green-container ul {
+    max-width: 70%;
   }
 
   .tents label {

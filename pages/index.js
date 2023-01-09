@@ -31,7 +31,7 @@ const {show,  addToCart} = useContext(AppContext);
         
         <Basket/> :  
         
-        <form onSubmit={addToCart}className='reservation-form'>
+        <form onSubmit={addToCart} className='reservation-form'>
             <Tickets />
             <Accommodation spots={spots}/>
             <Tents />

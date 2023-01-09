@@ -37,9 +37,7 @@ export default function Schedule({schedule, bands}) {
       </Head>  
       <Header />
     <div className="container">
-     
 
-     
       <main className='main'>
 
       {show ? <Basket/> : <>

@@ -15,6 +15,7 @@ const [id, setId]=useState();
 const [showForm, setShowForm]=useState(false)
 
  function book() {
+
 if(totalTickets>0){
     const options = {
         method: 'PUT',
@@ -30,9 +31,9 @@ if(totalTickets>0){
  */      .catch((err) => console.error(err));
 
     //show the ticket horlders and payment form
-    setShowForm(true)
-
- 
+    setShowForm(true) 
+} else {
+    <h3>Please fill out the</h3>
 }
     } 
     const regular=tickets.regular * regularPrice;
