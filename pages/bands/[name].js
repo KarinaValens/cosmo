@@ -22,7 +22,7 @@ export default function Band ({bands}) {
     return (
     <> 
     <div className="bandpage"> 
-          <div className="bandPageHero" style={{ backgroundImage: `url(${band.logo.includes("https://") ? band.logo : `http://` + url + `logos/` + band.logo})`, backgroundColor:"hsla(0, 0%, 0%, 0.7)", backgroundBlendMode:'multiply', backgroundPosition:`center` }}> 
+          <div className="bandPageHero" style={{ backgroundImage: `url(${band.logo.includes("https://") ? band.logo : url + `logos/` + band.logo})`, backgroundColor:"hsla(0, 0%, 0%, 0.7)", backgroundBlendMode:'multiply', backgroundPosition:`center` }}> 
 
               <h1 className="bandPageTitle accent1">{band.name}</h1>
            
