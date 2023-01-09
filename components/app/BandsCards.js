@@ -3,8 +3,8 @@ import { useState, useContext } from 'react';
 import Image from 'next/image';
 
 
-//const url="http://localhost:8080/"
-const url= "https://rough-snowflake-4981.fly.dev/"
+const url="http://localhost:8080/"
+//const url= "https://rough-snowflake-4981.fly.dev/"
 
 
 export default function BandsCards ({bands}) {

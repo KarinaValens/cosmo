@@ -23,7 +23,8 @@
 
 * {
   box-sizing: border-box;
-  /* border: dotted 1px hotpink; */
+  /*   border: dotted 1px hotpink;
+ */
 }
 
 html,
@@ -552,7 +553,17 @@ label {
 }
 
 /* ---- // accommodation // ------- */
+.green-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+}
 
+.green-container ul {
+  margin-top: 1rem;
+  max-width: 60%;
+}
 .green-camping {
   background-color: var(--color-accent3);
 }
@@ -564,7 +575,7 @@ label {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  margin: 2rem auto;
+  margin: 0 auto 2rem;
 }
 
 .tents {

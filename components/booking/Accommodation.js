@@ -34,11 +34,9 @@ export default function Accommodation({spots}) {
 
                     />
         </label>
-
-        
-
-        
-        <label className="card border1">Helheim:            
+     
+       
+       <label className="card border1">Helheim:            
             <input onChange={handleChange} 
                    required
                    name="accommodation" 
@@ -67,7 +65,10 @@ export default function Accommodation({spots}) {
         </label>           
         
     </div>
-    <label className="card acomodation green-camping">Green Camping: 
+    <div className="green-container">
+      <h3>Green Camping Option</h3>
+    
+     <label className="card acomodation green-camping">Green Camping: 
         <input onChange={handleChange} 
         onClick={()=>{setChecket(!checked)}}
         name="greenCamping" 
@@ -77,6 +78,13 @@ export default function Accommodation({spots}) {
         checked={checked}
         />
       </label> 
+      <ul>
+      <li>Give you ecological food options.</li>
+      <li>Contributes with our effort in water conservation.</li> 
+      <li>Reduce the waste using reusable utensils like cutlery, bottles, plates, etc.</li>
+      <li>Just for 249,- more.</li>
+      </ul>
+      </div>
     </div>
   )
 }

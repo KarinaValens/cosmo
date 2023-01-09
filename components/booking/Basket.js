@@ -23,7 +23,7 @@ if(totalTickets>0){
       };
 
 
-    fetch(`http${url}reserve-spot`, options)
+    fetch(`${url}reserve-spot`, options)
       .then((res) => res.json())
       .then((res) => setId(res.id))
 /*       .then((res) => console.log(res))
