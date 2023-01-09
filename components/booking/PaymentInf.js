@@ -22,7 +22,7 @@ function PaymentInf() {
     <>
     <Countdown/>
     <h3>Payment Info</h3>
-    <form ref={payment} className="payment-form">
+    <form onSubmit={handlePayment} ref={payment} className="payment-form">
 
   
   <label>Firstname<input className="dynamic-inputs border2" type="text" required  placeholder="Firstname" name="name" id="card-name" autoFocus/></label>
@@ -39,7 +39,7 @@ function PaymentInf() {
   
   </div>
 
-    <button className="accion-button accent1 border2" type='submit' onClick={handlePayment}>CONFIRM PAYMENT</button>   
+    <button className="accion-button accent1 border2" type='submit' >CONFIRM PAYMENT</button>   
     </form>
     </>
    }

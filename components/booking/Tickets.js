@@ -20,6 +20,7 @@ export default function Tickets() {
         name="regular" 
         type="number" 
         min= {tickets.vip <= 0 ? 1 : 0}
+        required= {tickets.vip <= 0 ? true : false}
         max="10" 
         maxLength={3} 
         placeholder="0"/>
@@ -43,6 +44,7 @@ export default function Tickets() {
         name="vip" 
         type="number" 
         min= {tickets.regular <= 0 ? 1 : 0}
+        required= {tickets.regular <= 0 ? true : false}
         max="10" 
         maxLength={3} 
         placeholder="0"/>
