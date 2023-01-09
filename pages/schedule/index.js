@@ -15,8 +15,8 @@ import Basket from '../../components/booking/Basket'
 import { useContext} from "react";
 import { AppContext } from '../../components/context/AppContext' 
 
-const url="http://localhost:8080/"
-//const url= "https://rough-snowflake-4981.fly.dev/"
+//const url="http://localhost:8080/"
+const url= "https://rough-snowflake-4981.fly.dev/"
 
 
 export default function Schedule({schedule, bands}) {
