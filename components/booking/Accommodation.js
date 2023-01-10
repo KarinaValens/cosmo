@@ -7,7 +7,7 @@ import { AppContext } from "../context/AppContext";
 export default function Accommodation({spots}) {
 
   const {handleChange , checkbox, checked, setChecket, totalTickets}=useContext(AppContext);
- 
+
   
   return (
     
@@ -16,7 +16,8 @@ export default function Accommodation({spots}) {
 
     <div className="grid">    
          
-        <label className="card border1">Svartheim: 
+        <label className={`card border1 ${spots[0].available < totalTickets ? 'disabled' : ''}` }  
+>Svartheim: 
             <input onChange={handleChange} 
                    name="accommodation" 
                    value={spots[0].area} 
@@ -25,18 +26,17 @@ export default function Accommodation({spots}) {
                    />
         </label>
 
-        <label className="card border1">Nilfheim: 
+        <label className={`card border1 ${spots[1].available < totalTickets ? 'disabled' : ''}`}>Nilfheim: 
             <input onChange={handleChange} 
                    name="accommodation" 
                    value={spots[1].area}
                    type="radio"
                    disabled={spots[1].available < totalTickets}
-
                     />
         </label>
      
        
-       <label className="card border1">Helheim:            
+       <label className={`card border1 ${spots[2].available < totalTickets ? 'disabled' : ''}`}>Helheim:            
             <input onChange={handleChange} 
                    required
                    name="accommodation" 
@@ -46,7 +46,7 @@ export default function Accommodation({spots}) {
                   />
         </label>
 
-        <label className="card border1">Muspelheim: 
+        <label className={`card border1 ${spots[3].available < totalTickets ? 'disabled' : ''}`}>Muspelheim: 
             <input onChange={handleChange} 
                    name="accommodation" 
                    value={spots[3].area} 
@@ -55,7 +55,7 @@ export default function Accommodation({spots}) {
                    />
             </label>
 
-        <label className="card border1">Alfheim: 
+        <label className={`card border1 ${spots[4].available < totalTickets ? 'disabled' : ''}`}>Alfheim: 
             <input onChange={handleChange} 
             name="accommodation" 
             value={spots[4].area} 

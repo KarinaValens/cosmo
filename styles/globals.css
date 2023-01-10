@@ -553,6 +553,14 @@ label {
 }
 
 /* ---- // accommodation // ------- */
+
+.disabled {
+  /*   display: none;
+ */
+  border: solid 2px grey;
+  color: grey;
+}
+
 .green-container {
   display: flex;
   flex-direction: column;
