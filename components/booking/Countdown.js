@@ -35,7 +35,6 @@ if (countdown <= 0 ){
 }
 },[countdown])
 
-console.log("countdown",countdown)
 
   return (
     <h3 className='accent3'>Your reservation expires in <span className='accent2'>{formatTime(countdown)}s</span> </h3>

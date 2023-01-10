@@ -554,9 +554,8 @@ label {
 
 /* ---- // accommodation // ------- */
 
-.disabled {
-  /*   display: none;
- */
+.disabled,
+.disabled:hover {
   border: solid 2px grey;
   color: grey;
 }
@@ -577,6 +576,7 @@ label {
 }
 .green-camping {
   background-color: var(--color-accent3);
+  color: var(--color-neutral1);
 }
 
 /* ---- // tents // ------- */
