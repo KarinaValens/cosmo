@@ -8,8 +8,8 @@ import{useRouter} from "next/router"
 
 
 
-//const url="http://localhost:8080/"
-const url= "https://rough-snowflake-4981.fly.dev/"
+const url="http://localhost:8080/"
+//const url= "https://rough-snowflake-4981.fly.dev/"
 
 export default function Band ({bands}) {
 
