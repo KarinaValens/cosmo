@@ -25,9 +25,8 @@ export default  function PaymentInf() {
         if(value.length > 19) value = value.slice(0,19);    }
     input.value = value;
  }
-    /* the replace(/\D/g,'') to remove any non-digit character, then I'm using the slice(0,16) to take only 
-    the first 16 digits, after that I'm using match() method with .{1,4} regex that would match 4 digits. 
-    The g flag makes it match globally, and the join() method would join the array of matches with a space. */
+ /* It first removes any non-digit characters with value.replace(/\D/g,''), then it's using the match() method with the regular expression .{1,4} that would match 4 digits. The g flag makes it match globally and store the matches in an array.
+Then it's join the array of matches with a space, and taking the first 19 characters and storing it back in the input value. */
 
   function handlePayment(e){
     e.preventDefault();
