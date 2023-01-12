@@ -124,9 +124,8 @@ function fullfillReservation(e){
        </>) : false}
 
        
-       { tickets.vip ?( 
-        <>
-    <span>VIP</span>     
+       { tickets.vip ? ( 
+        <> <span>VIP</span>     
      {[...Array(parseInt(tickets.vip))].map((i)=>(
       <div key={i + Date.now()} className="dynamic-inputs-container">
       <label><span className='input-name'>Fullname</span>  
@@ -136,8 +135,8 @@ function fullfillReservation(e){
       <input  className="dynamic-inputs border1" type="email" name="emailVip" required placeholder="johndoe@mail.com" />
       </label>
      </div>     
-))}  
-</>) :false}
+      ))}  
+    </>) :false}
        
        <button className='accion-button border2 accent1' type='submit' >CONTINUE TO PAYMENT</button> 
 
